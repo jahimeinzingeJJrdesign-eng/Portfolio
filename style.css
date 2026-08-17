@@ -1,0 +1,1426 @@
+/* ==========================================
+   1. GOOGLE FONTS EINBINDEN
+   (Montserrat, Lora, Noto Sans, Nunito Sans)
+   ========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;1,500&family=Montserrat:ital,wght@0,500;1,500&family=Noto+Sans:ital,wght@0,400;1,400&family=Nunito+Sans:ital,wght@0,500;1,500&display=swap');
+
+/* ==========================================
+   2. DESIGN-SYSTEM (VARIABLEN)
+   ========================================== */
+:root {
+    /* Farben */
+    --color-impressum-black: #1F1F1F;
+    --color-white: #FFFFFF;
+    --color-blue-house: #0C5AAA;
+    --color-transparent-black: #1F1F1FB5;
+    --color-skin: #FFF4E9;
+    --color-black: #1B1C20;
+    --color-white-subheadline: #FFFFFFC9;
+    --color-divider: #1F1F1F45;
+    --color-radial-black: #2E2F33;
+    --color-blue-link: #008FCC;
+
+    /* Schriften (Default = Montserrat) */
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Lora', serif;
+    --font-text: 'Noto Sans', sans-serif;
+    --font-accent: 'Nunito Sans', sans-serif;
+}
+
+/* ==========================================
+   3. GLOBALE BASE-STYLES (DEFAULT-REGELN)
+   ========================================== */
+
+/* Sanftes Scrollen für den OnePager */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Standards für den Body */
+body {
+    font-family: var(--font-text);
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--color-black);
+    background-color: var(--color-white);
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+/* ==========================================
+   4. ÜBERSCHRIFTEN (DEFAULT = MONTSERRAT 500)
+   ========================================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-primary);
+    font-weight: 500;
+    margin-top: 0;
+}
+
+h1 { font-size: 86px; }
+h2 { font-size: 60px; }
+h3 { font-size: 54px; }
+h4 { font-size: 44px; }
+h5 { font-size: 34px; }
+h6 { font-size: 28px; }
+
+/* ==========================================
+   5. HEADER & NAVIGATION STYLES
+   ========================================== */
+
+/* Die schwarze Leiste über die gesamte Breite */
+.site-header {
+    background-color: var(--color-black);
+    height: 75px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--color-white);
+}
+
+/* Der innere Container */
+.header-container {
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Styling */
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 45px;
+    height: auto;
+}
+
+/* Navigations-Liste */
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 32px;
+}
+
+/* Die Links im Menü */
+.main-nav a {
+    position: relative;
+    text-decoration: none;
+    color: var(--color-white);
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 500;
+    padding-bottom: 6px;
+    transition: color 0.3s ease;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--color-skin);
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+/* ==========================================
+   6. HERO SECTION
+   ========================================== */
+.hero-section {
+    width: 100%;
+    min-height: calc(100vh - 75px);
+    background: radial-gradient(circle at center, var(--color-radial-black) 0%, var(--color-black) 80%);
+    display: flex;
+    align-items: flex-start;
+    padding-top: 7vh;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* ==========================================
+   7. HERO INHALTE (TEXT & TITEL)
+   ========================================== */
+.hero-text-block {
+    max-width: 650px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    position: relative;
+    z-index: 3;
+}
+
+.overline {
+    font-family: var(--font-accent);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-white-subheadline);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.section-title {
+    color: var(--color-white);
+    margin-bottom: -6px;
+    line-height: 1.1;
+    position: relative;
+    transform: translate(-5px, 0px);
+}
+
+.section-number {
+    font-family: var(--font-primary);
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--color-white);
+    position: absolute;
+    right: calc(100% + 16px);
+    top: -7px;
+    transform: translate(0px, 14px);
+}
+
+.hero-subheadline {
+    font-family: var(--font-secondary);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-white-subheadline);
+    line-height: 1.6;
+    transform: translate(0px, -14px);
+    margin-bottom: 140px;
+}
+
+/* ==========================================
+   8. MAIN HEADLINE & ANIMATED TEXT
+   ========================================== */
+.hero-main-title {
+    font-family: var(--font-primary);
+    font-size: 80px;
+    font-weight: 500;
+    color: var(--color-white);
+    line-height: 1.0;
+    margin: 0;
+}
+
+.animated-text-container {
+    display: inline-block;
+    position: relative;
+    min-width: 320px;
+    height: 1.2em;
+    vertical-align: bottom;
+}
+
+.animated-word {
+    position: absolute;
+    left: 0;
+    top: 13px;
+    opacity: 0;
+    white-space: nowrap;
+    color: var(--color-skin);
+    animation: fadeTextCycle 12s infinite;
+}
+
+.animated-word:nth-child(1) { animation-delay: 0s; }
+.animated-word:nth-child(2) { animation-delay: 3s; }
+.animated-word:nth-child(3) { animation-delay: 6s; }
+.animated-word:nth-child(4) { animation-delay: 9s; }
+
+@keyframes fadeTextCycle {
+    0% { opacity: 0; transform: translateY(12px); }
+    5% { opacity: 1; transform: translateY(0); }
+    22% { opacity: 1; transform: translateY(0); }
+    27% { opacity: 0; transform: translateY(-12px); }
+    100% { opacity: 0; }
+}
+
+@keyframes smoothCircleFade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.hero-secondary-subheadline {
+    font-family: var(--font-secondary);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-white-subheadline);
+    line-height: 1.6;
+    margin-top: 8px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 44px;
+    align-items: center;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    font-family: var(--font-secondary);
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border: 1px solid var(--color-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-skin);
+    transform: translateY(-2px);
+    border: 1px solid var(--color-skin);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary {
+    background-color: var(--color-blue-link);
+    color: var(--color-white);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-blue-house);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.hero-visual {
+    position: absolute;
+    right: 5%;
+    bottom: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-blue-circle {
+    position: absolute;
+    width: 550px;
+    height: 550px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, var(--color-blue-link) 0%, rgba(0, 0, 0, 0) 75%);
+    top: 45%;
+    left: 50%;
+    transform: translate(-74%, -58%);
+    z-index: 1;
+    animation: smoothCircleFade 3s ease-out 0s both;
+}
+
+.hero-portrait {
+    position: relative;
+    z-index: 2;
+    height: 118%;
+    object-fit: contain;
+    transform: translate(-165px, 0);
+}
+
+/* ==========================================
+   9. SIDE NAVIGATION (SEITEN-NAV)
+   ========================================== */
+.side-nav {
+    position: fixed;
+    right: 42px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+.side-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    position: relative;
+}
+
+.side-nav-list::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    bottom: 12px;
+    right: 15px;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.15);
+    z-index: -1;
+}
+
+.side-nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+.side-nav-link .nav-label {
+    font-family: var(--font-secondary);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    opacity: 0;
+    transform: translateX(12px);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.side-nav-link .nav-number {
+    font-family: var(--font-primary);
+    font-size: 13px;
+    font-weight: 600;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #0d0d0d;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.side-nav-link:hover,
+.side-nav-link.active {
+    color: var(--color-white);
+}
+
+.side-nav-link:hover .nav-label,
+.side-nav-link.active .nav-label {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.side-nav-link:hover .nav-number,
+.side-nav-link.active .nav-number {
+    border-color: var(--color-skin);
+    background-color: var(--color-skin);
+    color: var(--color-black);
+    box-shadow: 0 0 16px rgba(255, 255, 255, 0.25);
+}
+
+/* ==========================================
+   SEKTION 3 (INVERSE) - AKTIV-ZUSTAND
+   ========================================== */
+
+/* 1. Inaktive Punkte in Sektion 3 (Tiefschwarz, abgedunkelte Zahl) */
+.side-nav-link.inverse .nav-number {
+    background-color: #111111 !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+}
+
+/* 2. AKTIVER Punkt in Sektion 3 (Helleres Schwarz/Anthrazit + weiße Zahl) */
+.side-nav-link.inverse.active .nav-number {
+    background-color: #53535a !important; /* Helleres Schwarz / Anthrazit */
+    border-color: #38383a !important;
+    color: #ffffff !important;           /* Strahlend weiße 03 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Dezenter Schatten zur Hervorhebung */
+}
+
+/* 3. Aktives Label "Philosophie" */
+.side-nav-link.inverse.active .nav-label {
+    color: var(--color-black) !important;
+    font-weight: 600;
+}
+
+/* ==========================================
+   10. PROJECTS SECTION (PROJEKTE)
+   ========================================== */
+.projects-section {
+    position: relative;
+    background-color: var(--color-black);
+    padding: 120px 0;
+    overflow: hidden;
+}
+
+.projects-bg-glow {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--color-blue-link) 0%, rgba(0,0,0,0) 70%);
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.projects-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* HEADER GRID */
+.projects-header-grid {
+    display: grid;
+    grid-template-columns: 5% 1.5fr 0.8fr; 
+    gap: 47px;
+    margin-bottom: 40px;
+    align-items: start;
+}
+
+/* OVERLINES & TYPO */
+.overline-programme,
+.overline-galerie,
+.overline {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-skin);
+    display: block;
+    margin-bottom: 12px;
+}
+
+.overline-galerie {
+    transform: translateX(-1px);
+    margin-left: 0;
+}
+
+.overline-small {
+    font-size: 12px;
+    color: var(--color-white-subheadline);
+}
+
+.projects-header-grid .section-title {
+    font-size: 60px;
+    font-weight: 700;
+    color: var(--color-white);
+    margin: 0 0 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    left: -46px;
+}
+
+.projects-header-grid .section-number {
+    font-size: 24px;
+    color: var(--color-skin);
+    font-weight: 400;
+    position: static;
+    transform: none;
+    margin-bottom: 23px;
+    transform: translateX(0px);
+}
+
+.section-subheadline {
+    color: var(--color-white-subheadline);
+    font-size: 16px;
+    margin-bottom: 28px;
+    max-width: 480px;
+    transform: translateX(-2px);
+}
+
+.header-col-design {
+    transform: translateX(-203px);
+}
+
+.einfuehrung-text-small {
+    font-size: 16px;
+    line-height: 1.64;
+    color: var(--color-white-subheadline);
+    max-width: 420px;
+}
+
+/* FILTER NAVIGATION */
+.projects-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.6);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--color-white);
+    color: var(--color-black);
+    border-color: var(--color-white);
+}
+
+/* BODY GRID & SIDEBAR */
+.projects-body-grid {
+    display: grid;
+    grid-template-columns: 5% 1.5fr 0.8fr; 
+    gap: 32px;
+    margin-left: 13px;
+}
+
+.overline-programme {
+    transform: translate(-40px, 238px);
+}
+
+.sidebar-programs {
+    transform: translateX(-53px);
+}
+
+.sidebar-programs .programs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.program-item img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.program-item:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* PROJEKTE GRID (SPALTE 2 & 3 RECHTS) */
+.projects-grid {
+    grid-column: 2 / span 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px 32px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.project-image-wrapper {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #141414;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.04);
+}
+
+/* Formate / Höhen */
+.format-portrait-large .project-image-wrapper {
+    aspect-ratio: 3 / 4;
+}
+
+.format-portrait-small .project-image-wrapper,
+.format-square .project-image-wrapper {
+    aspect-ratio: 1 / 1;
+}
+
+/* Card Information */
+.project-title {
+    font-size: 18px;
+    color: var(--color-white);
+    margin: 0 0 6px 0;
+}
+
+.project-description {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0 0 10px 0;
+}
+
+.project-category-tag {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-skin);
+}
+
+/* Versteckte Projekte */
+.project-card.is-hidden {
+    display: none !important;
+}
+
+/* ==========================================
+   BUTTON: MEHR PROJEKTE ANZEIGEN
+   ========================================== */
+.projects-more-wrapper {
+    grid-column: 1 / -1; /* Nimmt exakt beide Spalten des Projekt-Grids ein */
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.btn-more-projects {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--color-skin);
+    color: var(--color-white);
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+}
+
+.btn-more-projects:hover {
+    background: var(--color-skin);
+    color: var(--color-black);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-more-projects .btn-icon {
+    transition: transform 0.3s ease;
+}
+
+.btn-more-projects:hover .btn-icon {
+    transform: translateY(3px);
+}
+
+/* Speziell für Vollbild-Mockups (z. B. ganze Websites) */
+.project-card.format-contain .project-img {
+    object-fit: contain; /* Zeigt das gesamte Bild ohne Anschnitt */
+}
+
+/* Optional: Gibt dem Rahmen z.B. einen weißen oder dunklen Hintergrund, 
+   damit die Ränder oben/unten sauber aussehen */
+.project-card.format-contain .project-image-wrapper {
+    background-color: #ffffff; /* Weiß lässt deinen Website-Screenshot nahtlos übergehen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container für mehrere übereinanderliegende Bilder vorbereiten */
+.project-image-wrapper {
+    position: relative; /* Wichtig für die absolute Positionierung des Hover-Bildes */
+}
+
+/* Das zweite Bild liegt exakt über dem ersten Bild */
+.project-img-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* Standardmäßig unsichtbar */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Geschmeidiges Einblenden + Zoom */
+    pointer-events: none; /* Klicks gehen durch das Bild hindurch */
+}
+
+/* HOVER-EFFEKT: Zweites Bild einblenden */
+.project-card:hover .project-img-hover {
+    opacity: 1; /* Bild wird sichtbar */
+}
+
+/* ZOOM-EFFEKT: Beide Bilder zoomen beim Hovern mit */
+.project-card:hover .project-img,
+.project-card:hover .project-img-hover {
+    transform: scale(1.04);
+}
+
+.filter-empty-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    
+    /* 1. Verhindert das Dehnen der Box nach unten */
+    align-self: start; 
+    height: auto; 
+
+    /* 2. Kompakterer Innenabstand (nach Bedarf anpassen) */
+    padding: 30px 20px; 
+
+    /* Restliches Styling */
+    color: var(--color-white-subheadline);
+    font-family: var(--font-secondary);
+    font-size: 18px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px dashed rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+
+    /* Nimm den Text nach oben */
+    margin-top: -1067px; /* Passe den Wert an (z. B. -600px bis -1000px), bis es perfekt sitzt */
+    position: relative;
+    z-index: 5;
+}
+
+/* ==========================================
+   SEKTION 3: PHILOSOPHIE
+   ========================================== */
+   
+.philosophy-section {
+    background-color: #f7f8f9; /* Subtiler, technischer Hellgrau-Ton */
+    color: #121212; /* Dunkler Text für hervorragende Lesbarkeit */
+    padding: 120px 0;
+    width: 100%;
+}
+
+.philosophy-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: start;
+}
+
+/* Linke Spalte */
+.philosophy-intro {
+    position: sticky;
+    top: 60px; /* Bleibt beim Scrollen leicht mit im Sichtfeld */
+}
+
+.section-tag {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #666666;
+    margin-bottom: 20px;
+    transform: translateX(-3px);
+}
+
+/* 2. Die Zahl aus dem Textfluss nehmen & nach links schieben */
+.section-number-3 {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(#666666);
+    
+    position: absolute;  /* Nimmt die 03 aus dem Textfluss */
+    left: -45px;         /* Schiebt die 03 in den linken Weißraum */
+    top: 6px;            /* Richtet die 03 vertikal an "Fokus" aus */
+}
+
+/* 1. Dem Elternelement die absolute Positionierung der Zahl erlauben */
+.philosophy-title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 24px;
+    color: var(--color-black);
+    transform: translateX(-7px);
+    
+    position: relative; /* Absoluter Anker für die 03 */
+}
+
+.philosophy-desc {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #444444;
+    max-width: 400px;
+    transform: translateX(-5px);
+}
+
+/* Rechte Spalte: Vertikale Liste */
+.philosophy-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.philosophy-item {
+    padding: 36px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12); /* Feine Trennlinien wie in Bild 1 */
+}
+
+.philosophy-item:first-child {
+    padding-top: 0;
+}
+
+.philosophy-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.philosophy-item h3 {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #111111;
+    letter-spacing: -0.5px;
+}
+
+.philosophy-item p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555555;
+    max-width: 500px;
+}
+
+/* Responsive Anpassung für Tablets & Smartphones */
+@media (max-width: 868px) {
+    .philosophy-section {
+        padding: 80px 0;
+    }
+
+    .philosophy-container {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .philosophy-intro {
+        position: static;
+    }
+
+    .philosophy-title {
+        font-size: 36px;
+    }
+}
+
+/* ==========================================
+   SEKTION 4: KONTAKT
+   ========================================== */
+.contact-section {
+    position: relative;
+    background-color: var(--color-black, #0d0d0d);
+    color: var(--color-white, #ffffff);
+    padding: 120px 0; /* Um 10px reduziert (von 160px auf 150px) */
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Radialer Verlauf analog zu Sektion 1 */
+.contact-bg-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, var(--color-radial-black, #2E2F33) 0%, rgba(0, 0, 0, 0) 70%);
+    opacity: 0.8; /* Erhöht für einen sichtbaren, weichen Kreis-Effekt */
+    pointer-events: none;
+    z-index: 0;
+}
+
+.contact-container {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Nummer & Label */
+.contact-number {
+    font-size: 14px;
+    color: var(--color-skin, #d1a374);
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.contact-tag {
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-white-subheadline, #a1a1a6);
+    margin-bottom: 24px;
+}
+
+/* Headline */
+.contact-title {
+    font-size: 56px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 26px;
+    color: var(--color-white, #ffffff);
+}
+
+/* Invertierter Button */
+.contact-action {
+    margin-bottom: 38px;
+}
+
+.contact-btn {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 16px 36px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Kontaktdaten (Mail & Tel) */
+.contact-email,
+.contact-phone {
+    font-size: 16px;
+    color: var(--color-white-subheadline, #a1a1a6);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-email {
+    margin-bottom: 8px; /* Kleiner Abstand zur Telefonnummer */
+}
+
+.contact-email:hover,
+.contact-phone:hover {
+    color: var(--color-white, #ffffff);
+}
+
+/* Responsive Anpassung für Mobilgeräte */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 90px 0;
+    }
+    .contact-title {
+        font-size: 40px;
+        margin-bottom: 36px;
+    }
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+/* ==========================================
+   FOOTER (STICKY & BALANCED)
+   ========================================== */
+.site-footer {
+    position: sticky;
+    bottom: 0;
+    z-index: 100;
+    background-color: var(--color-black, #0d0d0d);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 20px 0; /* Slightly tighter vertical padding for a sleek sticky bar */
+    font-size: 14px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    
+    /* 3-column Grid ensures the center column is dead-center regardless of text lengths */
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-copy {
+    color: var(--color-white-subheadline, #86868b);
+    margin: 0;
+    justify-self: start;
+}
+
+/* Social Media Icons (Centered) */
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-self: center; /* Locks icons to the true center */
+}
+
+.footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.65;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.footer-social a:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.social-icon {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+/* Navigation Links (Right-aligned) */
+.footer-nav {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    justify-self: end;
+}
+
+.footer-nav a {
+    position: relative; /* WICHTIG: Damit die Linie am Text bleibt */
+    color: var(--color-white-subheadline, #86868b);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+/* Die Start-Position der Linie (0% Breite, unsichtbar) */
+.footer-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; /* Abstand zwischen Text und Linie */
+    left: 0;
+    width: 0%;
+    height: 1px; /* Dicke der Linie */
+    background-color: var(--color-white, #ffffff); /* Farbe der Linie */
+    transition: width 0.3s ease-in-out;
+}
+
+.footer-nav a:hover {
+    color: var(--color-white, #ffffff);
+}
+
+/* Beim Hovern fährt die Linie auf 100% aus */
+.footer-nav a:hover::after {
+    width: 100%;
+}
+
+/* Responsive behavior for mobile */
+@media (max-width: 768px) {
+    .site-footer {
+        position: static; /* Disables sticky positioning on mobile to save screen real estate */
+    }
+
+    .footer-container {
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .footer-nav,
+    .footer-social {
+        justify-content: center;
+    }
+}
+
+/* ==========================================
+   10. UNTERSEITEN (IMPRESSUM & RECHTLICHES)
+   ========================================== */
+body.legal-page {
+    /* Helles Off-White als Hintergrund */
+    background-color: #f7f8f9;
+    color: #1d1d1f;
+    min-height: 100vh;
+}
+
+/* Back Link Header */
+.legal-header {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 24px 0;
+}
+
+.back-link {
+    color: #86868b; /* Dezentere Farbe für den Zurück-Link */
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.back-link:hover {
+    color: #1d1d1f; /* Dunkler beim Hovern */
+    transform: translateX(-4px);
+}
+
+/* Hauptcontainer */
+.legal-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 24px 100px;
+}
+
+/* Kicker Tag */
+.legal-tag {
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-skin, #d1a374); /* Dein Akzentton als schöner Kontrast */
+    font-weight: 600;
+    display: block;
+}
+
+/* Exakte 55px H1 Headline */
+.legal-title {
+    font-size: 55px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-top: 8px;
+    margin-bottom: 56px;
+    color: #1d1d1f; /* Tiefes Schwarz-Anthrazit */
+    line-height: 1.1;
+}
+
+/* Sektionen */
+.legal-block {
+    margin-bottom: 44px;
+}
+
+/* H4 für untere Hauptheadlines */
+.legal-block h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1d1d1f; /* Satte Hauptüberschrift */
+    margin-bottom: 12px;
+    letter-spacing: -0.3px;
+}
+
+/* H3 für Unterebenen (I, II, III) */
+.legal-sub-block {
+    margin-top: 28px;
+    padding-left: 16px;
+    border-left: 2px solid var(--color-radial-black); /* Akzentlinie links */
+}
+
+.legal-sub-block h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 8px;
+}
+
+/* Fließtext & Absätze */
+.legal-block p,
+.legal-sub-block p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: #424245; /* Dezenteres, weicheres Dunkelgrau für bessere Lesbarkeit */
+    margin: 0;
+}
+
+.legal-block strong {
+    color: #1d1d1f; /* Hervorhebungen bleiben kräftig */
+}
+
+.legal-block a {
+    color: #1d1d1f;
+    text-decoration: underline;
+    transition: opacity 0.2s ease;
+}
+
+.legal-block a:hover {
+    opacity: 0.6;
+}
+
+/* Mobile Responsive Anpassung */
+@media (max-width: 768px) {
+    .legal-title {
+        font-size: 38px;
+        margin-bottom: 40px;
+    }
+    
+    .legal-block h4 {
+        font-size: 18px;
+    }
+    
+    .legal-sub-block {
+        padding-left: 12px;
+    }
+}
+
+
+/* ==========================================
+   EIGENSTÄNDIGE KONTAKTSEITE (ISOLIERT)
+   ========================================== */
+
+.page-contact-wrapper {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+}
+
+.page-contact-form-section .form-instruction {
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.page-contact-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.page-contact-form .form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-contact-form label {
+    font-weight: 500;
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+}
+
+.page-contact-form input[type="text"],
+.page-contact-form input[type="email"],
+.page-contact-form input[type="tel"],
+.page-contact-form select,
+.page-contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d1d6;
+    border-radius: 4px;
+    background-color: #f2f2f7;
+    font-size: 1rem;
+}
+
+.page-contact-radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.page-contact-radio-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.page-contact-checkbox-group {
+    flex-direction: row !important;
+    align-items: center;
+    gap: 10px;
+}
+
+.page-contact-submit-btn {
+    background-color: #0082c3;
+    color: #ffffff;
+    border: none;
+    padding: 14px 28px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background-color 0.2s ease;
+}
+
+.page-contact-submit-btn:hover {
+    background-color: #006699;
+}
+
+/* Info-Spalte rechts */
+.page-contact-info-section .info-block {
+    margin-left: 40px;
+    font-size: 16px;
+    margin-top: 122px;
+    margin-bottom: 40px;
+}
+
+.page-contact-info-section h6, 
+.page-contact-info-section h6 {
+    margin-bottom: 20px;
+    line-height: 120%;
+}
+
+.page-contact-social-links {
+    display: flex;
+    gap: 25px;
+    margin-top: 15px;
+}
+
+.page-contact-social-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+}
+
+.page-contact-social-card img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Responsive Anpassung */
+@media (max-width: 768px) {
+    .page-contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .page-contact-form .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.info-block-2 {
+    margin-left: 40px;
+}

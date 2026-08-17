@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt — Jahi Meinzinger</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="legal-page">
+
+    <!-- Header mit Zurück-Link -->
+    <header class="legal-header">
+        <a href="index.html" class="back-link">&larr; Zurück zur Hauptseite</a>
+    </header>
+
+    <!-- Hauptinhalt Kontakt -->
+    <main class="page-contact-wrapper">
+
+        <!-- Linke Spalte: Kontaktformular -->
+        <section class="page-contact-form-section">
+            <h1 class="legal-title">Kontaktformular</h1>
+            <p class="form-instruction">Alle mit * gekennzeichneten Felder bitte ausfüllen.</p>
+
+            <form action="https://formsubmit.co/Jahi.Meinzingerdesign@gmail.com" method="POST"
+                enctype="multipart/form-data" class="page-contact-form">
+
+                <!-- Honeypot Spam-Schutz -->
+                <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+                <input type="hidden" name="_captcha" value="false">
+
+                <!-- Anrede -->
+                <div class="form-group">
+                    <label for="anrede">Anrede*</label>
+                    <select id="anrede" name="Anrede" required>
+                        <option value="" disabled selected>Bitte wählen</option>
+                        <option value="Frau">Frau</option>
+                        <option value="Herr">Herr</option>
+                        <option value="Divers">Divers</option>
+                    </select>
+                </div>
+
+                <!-- Vorname & Nachname -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="vorname">Vorname*</label>
+                        <input type="text" id="vorname" name="Vorname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nachname">Nachname*</label>
+                        <input type="text" id="nachname" name="Nachname" required>
+                    </div>
+                </div>
+
+                <!-- E-Mail & Telefon -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Deine E-Mail-Adresse*</label>
+                        <input type="email" id="email" name="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefon">Deine Telefonnummer</label>
+                        <input type="tel" id="telefon" name="Telefon" placeholder="+493012345678">
+                    </div>
+                </div>
+
+                <!-- Betreff -->
+                <div class="form-group">
+                    <label for="betreff">Betreff*</label>
+                    <input type="text" id="betreff" name="Betreff" required>
+                </div>
+
+                <!-- Radio-Auswahl -->
+                <div class="form-group">
+                    <label class="group-label">Ich interessiere mich für:</label>
+                    <div class="page-contact-radio-group">
+                        <label class="page-contact-radio-item"><input type="radio" name="Interesse"
+                                value="Grafikdesign"> Grafikdesign</label>
+                        <label class="page-contact-radio-item"><input type="radio" name="Interesse"
+                                value="Webentwicklung"> Webentwicklung</label>
+                        <label class="page-contact-radio-item"><input type="radio" name="Interesse" value="UI/UX">
+                            UI/UX</label>
+                        <label class="page-contact-radio-item"><input type="radio" name="Interesse" value="SEO">
+                            SEO</label>
+                        <label class="page-contact-radio-item"><input type="radio" name="Interesse"
+                                value="Videoschnitt"> Videoschnitt</label>
+                    </div>
+                </div>
+
+                <!-- Nachricht -->
+                <div class="form-group">
+                    <label for="nachricht">Deine Nachricht (optional)</label>
+                    <textarea id="nachricht" name="Nachricht" rows="6"></textarea>
+                </div>
+
+                <!-- Datei Hochladen -->
+                <div class="form-group">
+                    <label for="datei">Datei Hochladen</label>
+                    <input type="file" id="datei" name="Anhang">
+                </div>
+
+                <!-- Datenschutz Checkbox -->
+                <div class="form-group page-contact-checkbox-group">
+                    <input type="checkbox" id="datenschutz" name="Datenschutz" required>
+                    <label for="datenschutz">
+                        Ich habe die <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a> gelesen und
+                        stimme ihr zu.*
+                    </label>
+                </div>
+
+                <button type="submit" class="page-contact-submit-btn">SENDEN</button>
+            </form>
+        </section>
+
+        <!-- Rechte Spalte: Direktkontakt & Infos -->
+        <section class="page-contact-info-section">
+
+            <div class="info-block">
+                <h6>Wenn Sie mich sofort <br>erreichen möchten:</h6>
+                <p>Tel-Nr.: <span id="encoded-phone"></span></p>
+                <p>von Montag bis Freitag:<br> &bull; 10:00 – 14:00 Uhr<br>&bull; 15:00 – 17:00 Uhr</p>
+            </div>
+
+            <div class="info-block-2">
+                <h6>Möchten Sie zurückgerufen werden?</h6>
+                <p>Kurz ausfüllen, entspannt zurücklehnen. Ich melde <br> mich innerhalb von 24 Stunden mit ersten <br>
+                    konkreten Ideen bei Ihnen.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p class="footer-copy">&copy; 2026 Jahi Meinzinger. Alle Rechte vorbehalten.</p>
+
+            <div class="footer-social">
+                <a href="https://x.com/J4111v1" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                    <img src="assets/social-media/X-Logo-80x80.png" alt="X" class="social-icon">
+                </a>
+                <a href="https://www.instagram.com/j4111v1/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Instagram">
+                    <img src="assets/social-media/Instagram-Logo-80x80.png" alt="Instagram" class="social-icon">
+                </a>
+            </div>
+
+            <nav class="footer-nav">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="barrierefreiheit.html">Barrierefreiheit</a>
+                <a href="kontakt.html">Kontakt</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- JS Skript für Telefonnummer-Schutz -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Base64 für "+4915228144559"
+            const encoded = "KzQ5MTUyMjgxNDQ1NTk=";
+            const decoded = atob(encoded); // Decodiert den String im Browser
+
+            const phoneContainer = document.getElementById("encoded-phone");
+            if (phoneContainer) {
+                phoneContainer.innerHTML = `<a href="tel:${decoded}">+49 1522 8144559</a>`;
+            }
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <!-- UNSICHTBAR: Nur Einstellungen & Verknüpfungen -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jahi Meinzinger – Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- 1. HEADER: Dein Bereich ganz oben (Logo, Name & Navigation) -->
+    <header class="site-header">
+        <div class="header-container">
+
+            <!-- Links: Logo -->
+            <a href="#" class="logo-link">
+                <!-- Tausche "logo.png" später gegen deinen echten Dateinamen aus -->
+                <img src="assets/JM-Logo.svg" alt="Jahi Meinzinger Logo" class="logo-img">
+            </a>
+
+            <!-- Rechts: Navigation -->
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#ueber-mich">Über mich</a></li>
+                    <li><a href="#projekte">Projekte</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- 2. MAIN: Der Hauptinhalt der Website -->
+    <!-- 2. MAIN: Der Hauptinhalt der Website -->
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="hero-container">
+
+                <!-- Textbereich (Ebene 3 – liegt vor dem Bild) -->
+                <div class="hero-text-block">
+                    <span class="overline">PROFIL</span>
+
+                    <h2 class="section-title">
+                        <span class="section-number">01</span>
+                        Über mich
+                    </h2>
+
+                    <p class="hero-subheadline">
+                        Grafik- & Webdesigner: Ich gestalte intuitive Interfaces, <br>
+                        funktionale Konzepte und einheitliches Design.
+                    </p>
+
+                    <!-- Haupt-Headline mit animiertem Text -->
+                    <h1 class="hero-main-title">
+                        Hi, ich bin<br>
+                        Jahi –
+                        <span class="animated-text-container">
+                            <span class="animated-word">Grafikdesigner</span>
+                            <span class="animated-word">Web Developer</span>
+                            <span class="animated-word">Videograf</span>
+                            <span class="animated-word">UI/UX Designer</span>
+                        </span>
+                    </h1> <!-- H1 ist hier sauber geschlossen! -->
+
+                    <!-- Zweite Subheadline -->
+                    <p class="hero-secondary-subheadline">
+                        Gutes Design beginnt an der Wurzel: Es gibt Ihrer<br>
+                        Botschaft einen Sinn und Ihrer Marke ein klares Ziel.
+                    </p>
+
+                    <!-- Die zwei Buttons -->
+                    <div class="hero-actions">
+                        <a href="#projekte" class="btn btn-primary">Projekte ansehen</a>
+                        <a href="#ueber-mich" class="btn btn-secondary">Über mich</a>
+                    </div>
+                </div>
+
+                <!-- NEU: Visual Bereich (Ebene 1 & 2 – Kreis & Portrait) -->
+                <div class="hero-visual">
+                    <div class="hero-blue-circle"></div>
+                    <!-- Vergiss nicht, 'dein-portrait.png' durch deinen echten Dateinamen zu ersetzen -->
+                    <img src="assets/JM-Portrait.png"
+                        alt="Jahi - Grafikdesigner, Web developer, UI/UX Designer & Videograf" class="hero-portrait">
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 3. SECTION: PROJECTS / GALERIE -->
+        <section id="projekte" class="projects-section">
+
+            <!-- Radialisierter Hintergrund-Glow -->
+            <div class="projects-bg-glow"></div>
+
+            <div class="projects-container">
+
+                <!-- ==========================================
+             1. HEADER-GRID (Spalte 1, 2, 3 Nebeneinander)
+             ========================================== -->
+                <div class="projects-header-grid">
+
+                    <!-- SPALTE 1 (Aussenseite): Programme-Titel -->
+                    <div class="header-col-programs">
+                        <span class="overline-programme">PROGRAMME</span>
+                    </div>
+
+                    <!-- SPALTE 2 (Bündig Logo): Galerie, Headline, Subheadline & Filter -->
+                    <div class="header-col-galerie">
+                        <span class="overline-galerie">GALERIE</span>
+                        <h2 class="section-title">
+                            <span class="section-number">02</span>
+                            Projekte
+                        </h2>
+                        <p class="section-subheadline">
+                            Eine Auswahl meiner Arbeiten aus Design, Code und Video.
+                        </p>
+
+                        <!-- Filter Navigation direkt unter der Subheadline -->
+                        <nav class="projects-filter">
+                            <button class="filter-btn active" data-filter="all">Alle</button>
+                            <button class="filter-btn" data-filter="grafik">Grafik</button>
+                            <button class="filter-btn" data-filter="uiux">UI/UX</button>
+                            <button class="filter-btn" data-filter="web">Web</button>
+                            <button class="filter-btn" data-filter="video">Video</button>
+                        </nav>
+                    </div>
+
+                    <!-- SPALTE 3 (Rechts): Design-Note (Kompakt & klein) -->
+                    <div class="header-col-design">
+                        <span class="overline overline-small">Einführung</span>
+                        <p class="einfuehrung-text-small">
+                            Moderne Grafiken, intuitives UI/UX-Design und ästhetische Videoproduktion. Dank fundierter
+                            Agenturerfahrung sowie solider HTML- und CSS-Kenntnisse gestalte ich als Design Allrounder.
+                        </p>
+                    </div>
+
+                </div> <!-- /.projects-header-grid -->
+
+
+                <!-- ==========================================
+             2. MAIN-BODY-GRID (Programme Links, Mocks Rechts)
+             ========================================== -->
+                <div class="projects-body-grid">
+
+                    <!-- SPALTE 1 LINKS: Die 14-15 Programme-Icons untereinander -->
+                    <aside class="sidebar-programs">
+                        <div class="programs-list">
+                            <div class="program-item" title="Photoshop"><img src="assets/programme-logos/Photoshop.png"
+                                    alt="Photoshop"></div>
+                            <div class="program-item" title="Illustrator"><img
+                                    src="assets/programme-logos/illustrator.png" alt="Illustrator"></div>
+                            <div class="program-item" title="Indesign"><img src="assets/programme-logos/Indesign.png"
+                                    alt="Indesign"></div>
+                            <div class="program-item" title="Premiere Pro"><img
+                                    src="assets/programme-logos/Premiere-Pro.png" alt="Premiere-Pro"></div>
+                            <div class="program-item" title="Adobe xd"><img src="assets/programme-logos/Adobe-xd.png"
+                                    alt="Adobe-xd"></div>
+                            <div class="program-item" title="DaVinci Resolve Studio"><img
+                                    src="assets/programme-logos/DaVinci-Resolve-Studio-Logo.png"
+                                    alt="DaVinci-Resolve-Studio-Logo"></div>
+                            <div class="program-item" title="Visual-Studio-Code-Logo"><img
+                                    src="assets/programme-logos/Visual-Studio-Code-Logo.png"
+                                    alt="Visual-Studio-Code-Logo"></div>
+                            <div class="program-item" title="Python-Logo"><img
+                                    src="assets/programme-logos/Python-logo.png" alt="Python-Logo"></div>
+                            <div class="program-item" title="Github-Logo"><img
+                                    src="assets/programme-logos/Github-Logo-W.png" alt="Github-Logo"></div>
+                            <div class="program-item" title="Figma"><img src="assets/programme-logos/Figma.png"
+                                    alt="Figma-Logo"></div>
+                            <div class="program-item" title="Elementor"><img src="assets/programme-logos/Elementor.png"
+                                    alt="Elementor-Logo"></div>
+                            <div class="program-item" title="Wordpress"><img
+                                    src="assets/programme-logos/Wordpress-W.png" alt="Wordpress-Logo"></div>
+                            <div class="program-item" title="Blender"><img src="assets/programme-logos/Blender.png"
+                                    alt="Blender-Logo"></div>
+                            <div class="program-item" title="Canvas"><img src="assets/programme-logos/Canvas.png"
+                                    alt="Canvas-Logo"></div>
+                            <div class="program-item" title="Google-Gemini"><img
+                                    src="assets/programme-logos/Google-Gemini-Logo.png" alt="Google-Gemini-Logo"></div>
+                            <div class="program-item" title="Claude"><img src="assets/programme-logos/Claude-Logo.png"
+                                    alt="Claude-Logo"></div>
+                            <div class="program-item" title="Excel"><img src="assets/programme-logos/Excel.png"
+                                    alt="Excel-Logo"></div>
+                            <div class="program-item" title="Powerpoint"><img
+                                    src="assets/programme-logos/Powerpoint.png" alt="Powerpoint-Logo"></div>
+                            <!-- Weitere Icons folgen hier ... -->
+                        </div>
+                    </aside>
+
+                    <!-- SPALTE 2 & 3 RECHTS: 2-Spalten Projekt-Grid -->
+                    <div class="projects-grid">
+
+                        <!-- Projekt 1: Hochformat Groß -->
+                        <article class="project-card format-portrait-large" data-category="uiux">
+                            <div class="project-image-wrapper">
+                                <img src="assets/projects/JM-Visitenkarten-Mockup.png" alt="Projekt Name 1"
+                                    class="project-img">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">Visitenkarten</h3>
+                                <p class="project-description">Moderne Visitenkartengestaltung im Corporate Design mit
+                                    <br> individuellem Soundwave-Logo und klarem Branding.
+                                </p>
+                                <span class="project-category-tag">Grafik- & Printdesign</span>
+                            </div>
+                        </article>
+
+                        <!-- Projekt 2: Hochformat Klein / Quadratisch -->
+                        <article class="project-card format-portrait-small" data-category="web">
+                            <div class="project-image-wrapper">
+                                <img src="assets/projects/JM-Soundwave-Logo-transp.png" alt="Projekt Name 2"
+                                    class="project-img">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">Jahi Meinzinger - Logo</h3>
+                                <p class="project-description">Gutes Design löst Probleme; großartiges Design schafft
+                                    Identität. Es geht nie nur darum, wie etwas aussieht, sondern wie es sich anfühlt,
+                                    wie es funktioniert und welche Geschichte es erzählt</p>
+                                <span class="project-category-tag">Grafik- & Webdesign</span>
+                            </div>
+                        </article>
+
+                        <!-- Projekt 3: Quadratisch -->
+                        <article class="project-card format-square" data-category="grafik">
+                            <div class="project-image-wrapper">
+                                <img src="assets/projects/JM-Protein-Case-Mockup-ESN.png" alt="Projekt Name 3"
+                                    class="project-img">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">Protein Tub Konzept</h3>
+                                <p class="project-description">Konzeptstudie für ein ESN-Proteinprodukt, entwickelt um
+                                    technisches Know-how <br> und Kreativität im Verpackungsdesign unter Beweis zu
+                                    stellen. ( Dies ist ein reines <br> Design-Konzept ohne kommerziellen Hintergrund )
+                                </p>
+                                <span class="project-category-tag">Grafik- & Konzeptdesign</span>
+                            </div>
+                        </article>
+
+                        <!-- Projekt 4: Hochformat Groß -->
+                        <article class="project-card format-portrait-large" data-category="video">
+                            <div class="project-image-wrapper">
+                                <img src="assets/projects/Das-Stuttgarter-Ballett-JM.png" alt="Projekt Name 4"
+                                    class="project-img">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">Das Stuttgarter Ballet</h3>
+                                <p class="project-description">Entwurf eines ausdrucksstarken Kulturplakats, das die
+                                    emotionale und <br> düstere Ästhetik der Ballett-Inszenierung grafisch einfängt.</p>
+                                <span class="project-category-tag">Grafik-, Print- & Webdesign</span>
+                            </div>
+                        </article>
+
+                        <!-- ==================== NEUE VERSTECKTE PROJEKTE (OPTION B) ==================== -->
+
+                        <!-- Projekt 5 (Platzhalter) -->
+                        <article class="project-card format-square is-hidden" data-category="uiux">
+                            <div class="project-image-wrapper">
+                                <img src="assets/projects/JM-Valor-Logo.jpg" alt="Valor-Logo" class="project-img">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">Valor Logo</h3>
+                                <p class="project-description">Ein zukunftsweisender Auftritt für ‚Valor‘: Das Konzept
+                                    vereint moderne Typografie und eine kraftvolle Bildsprache zu einem stimmigen,
+                                    wertwertigen Markenerlebnis.</p>
+                                <span class="project-category-tag">Grafik & Webdesign</span>
+                            </div>
+                        </article>
+
+                        <!-- Projekt 6 (Platzhalter) -->
+                        <article class="project-card format-portrait-large is-hidden" data-category="web">
+                            <div class="project-image-wrapper">
+                                <img src="assets/projects/Coquere-Figma-UIUX.png" alt="Coquere UI/UX"
+                                    class="project-img">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">HabitSwitch - Weniger Überforderung. Mehr Fortschritt.</h3>
+                                <p class="project-description">Große Lebens- und Karriereziele überfordern oft, weil der
+                                    konkrete Weg dorthin im Nebel liegt. HabitShift bricht komplexe Vorhaben mithilfe
+                                    intelligenter Algorithmen in tägliche, machbare Mikro-Schritte herunter und steuert
+                                    deinen Fortschritt stressfrei direkt vom Smartphone aus.</p>
+                                <span class="project-category-tag">UI/UX Figma & Appdesign</span>
+                            </div>
+                        </article>
+
+                        <!-- Projekt 7 (Coquere) mit 2 Bildern -->
+                        <article class="project-card format-portrait-small format-contain is-hidden"
+                            data-category="uiux">
+                            <div class="project-image-wrapper">
+                                <!-- 1. Standard-Bild -->
+                                <img src="assets/projects/Coquere-Figma-UIUX.png" alt="Coquere UI/UX"
+                                    class="project-img">
+
+                                <!-- 2. Zweites Bild (wird beim Hovern eingeblendet) -->
+                                <img src="assets/projects/Coquere-Figma-UIUX-2.png" alt="Coquere Detailansicht"
+                                    class="project-img project-img-hover">
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">Coquere - Kochen ohne Stress.</h3>
+                                <p class="project-description">Smartes Food-Conscious Webdesign für stressfreies Kochen.
+                                    Coquere kombiniert ein minimalistisches Designsystem mit smarter Bestandsprüfung und
+                                    schnellen 15–30-Minuten-Gerichten für den perfekten Feierabend.</p>
+                                <span class="project-category-tag">UI/UX Figma</span>
+                            </div>
+                        </article>
+
+                        <!-- BUTTON ZUM AUFKLAPPEN (Spannt über beide Projekt-Spalten) -->
+                        <div class="projects-more-wrapper">
+                            <button id="load-more-btn" class="btn-more-projects">
+                                Mehr Projekte entdecken
+                                <span class="btn-icon">↓</span>
+                            </button>
+                        </div>
+
+                    </div> <!-- /.projects-grid -->
+
+                    <!-- Hinweis für leere / im Aufbau befindliche Filter -->
+                    <div id="filter-empty-message" class="filter-empty-message" style="display: none;">
+                        <p>Die Seite befindet sich noch unter Betrieb, Inhalt folgt.</p>
+                    </div>
+
+                </div> <!-- /.projects-body-grid -->
+
+            </div> <!-- /.projects-container -->
+        </section>
+
+        <!-- Sektion 3: Philosophie -->
+        <section id="philosophie" class="philosophy-section">
+            <div class="philosophy-container">
+
+                <!-- Linke Spalte: Titel & Vision -->
+                <div class="philosophy-intro">
+                    <span class="section-tag">MEINE PHILOSOPHIE</span>
+                    <h2 class="philosophy-title">
+                        <span class="section-number-3">03</span>
+                        Fokus im <br> Design
+                    </h2>
+                    <p class="philosophy-desc">
+                        Gutes Design ist kein Zufall, sondern das Resultat klarer Prinzipien. Durch meine tägliche
+                        Arbeit in Design, Web und Video verbinde ich Ästhetik mit Funktion, um Zielgruppen zu erreichen.
+                    </p>
+                </div>
+
+                <!-- Rechte Spalte: Die 3 Kernprinzipien (Scannbar & Prägnant) -->
+                <div class="philosophy-list">
+
+                    <div class="philosophy-item">
+                        <h3>Konsistenz & Struktur</h3>
+                        <p>Einheitliche Designsysteme für nahtlose Wiedererkennung über alle Kanäle hinweg.</p>
+                    </div>
+
+                    <div class="philosophy-item">
+                        <h3>Gezielte Blickführung</h3>
+                        <p>Klarer Fokus durch bewussten Einsatz von Kontrast, Typografie und Weißraum.</p>
+                    </div>
+
+                    <div class="philosophy-item">
+                        <h3>Funktion mit Ziel</h3>
+                        <p>Durchdachte Usability, die komplexe Inhalte vereinfacht und Ergebnisse liefert.</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Sektion 4: Kontakt -->
+        <section id="kontakt" class="contact-section">
+            <!-- Dunkler radialer Verlauf (#2E2F33) -->
+            <div class="contact-bg-glow"></div>
+
+            <div class="contact-container">
+                <!-- Tag & Nummer -->
+                <span class="contact-number">04</span>
+                <span class="contact-tag">KONTAKT</span>
+
+                <!-- Haupt-Headline -->
+                <h2 class="contact-title">Schreib was.</h2>
+
+                <!-- Invertierter Button -->
+                <div class="contact-action">
+                    <a href="kontakt.html" class="contact-btn">Kontaktformular</a>
+                </div>
+
+                <!-- E-Mail Adresse -->
+                <!-- Statt Klartext-Link: Data-Attribute nutzen -->
+                <a href="#" id="safe-email" class="contact-email" data-user="Jahi.Meinzingerdesign"
+                    data-domain="gmail.com">
+                    E-Mail anzeigen...
+                </a>
+
+                <a href="#" id="safe-phone" class="contact-phone" data-country="49" data-prefix="1522"
+                    data-number="8144559">
+                    Telefon anzeigen...
+                </a>
+            </div>
+        </section>
+
+        <!-- Fixierter Section Tracker (Rechte Seite) -->
+        <nav class="side-nav">
+            <ul class="side-nav-list">
+                <li>
+                    <a href="#hero" class="side-nav-link active">
+                        <span class="nav-label">Über mich</span>
+                        <span class="nav-number">01</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#projekte" class="side-nav-link">
+                        <span class="nav-label">Projekte</span>
+                        <span class="nav-number">02</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#philosophie" class="side-nav-link inverse">
+                        <span class="nav-label">Philosophie</span>
+                        <span class="nav-number">03</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#kontakt" class="side-nav-link">
+                        <span class="nav-label">Kontakt</span>
+                        <span class="nav-number">04</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+
+    </main>
+
+    <!-- 3. FOOTER: Bereich ganz unten (Copyright, Links zu Impressum etc.) -->
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p class="footer-copy">&copy; 2026 Jahi Meinzinger. Alle Rechte vorbehalten.</p>
+
+            <!-- Social Media Icons -->
+            <div class="footer-social">
+                <a href="https://x.com/J4111v1" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                    <img src="assets/social-media/X-Logo-80x80.png" alt="X" class="social-icon">
+                </a>
+                <a href="https://www.instagram.com/j4111v1/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Instagram">
+                    <img src="assets/social-media/Instagram-Logo-80x80.png" alt="Instagram" class="social-icon">
+                </a>
+            </div>
+
+            <nav class="footer-nav">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="barrierefreiheit.html">Barrierefreiheit</a>
+                <a href="kontakt.html">Kontakt</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
