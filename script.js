@@ -60,28 +60,23 @@ document.addEventListener('DOMContentLoaded', () => {
                             card.style.display = 'none';
                         } else {
                             card.style.display = 'flex';
-                            visibleCardsCount++; // Zählt mit, wie viele Karten angezeigt werden
+                            visibleCardsCount++;
                         }
                     } else {
                         card.style.display = 'none';
                     }
                 });
 
-                // HINWEIS-TEXT EIN-/AUSBBLENDEN (wenn 0 Treffer wie z.B. bei Video)
+                // HINWEIS-TEXT EIN-/AUSBLENDEN
                 if (emptyMessage) {
-                    if (visibleCardsCount === 0) {
-                        emptyMessage.style.display = 'block';
-                    } else {
-                        emptyMessage.style.display = 'none';
-                    }
+                    emptyMessage.style.display = visibleCardsCount === 0 ? 'block' : 'none';
                 }
 
-                // "Mehr anzeigen"-Button ausblenden, wenn nicht "Alle" aktiv ist
+                // "Mehr anzeigen"-Button steuern
                 if (loadMoreWrapper) {
                     if (selectedFilter !== 'all') {
                         loadMoreWrapper.style.display = 'none';
                     } else {
-                        // Prüfen, ob bei "Alle" überhaupt noch versteckte Karten da sind
                         const hasHidden = document.querySelectorAll('.project-card.is-hidden').length > 0;
                         loadMoreWrapper.style.display = hasHidden ? 'flex' : 'none';
                     }
@@ -102,7 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.style.display = 'flex';
             });
 
-            // Versteckt den Button-Wrapper sanft nach dem Klick
             if (loadMoreWrapper) {
                 loadMoreWrapper.style.display = 'none';
             }
@@ -118,7 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (sections.length > 0 && navLinks.length > 0) {
         const observerOptions = {
             root: null,
-            // Triggers active state when section reaches middle third of screen
             rootMargin: '-40% 0px -40% 0px',
             threshold: 0
         };
@@ -141,19 +134,22 @@ document.addEventListener('DOMContentLoaded', () => {
         sections.forEach(section => observer.observe(section));
     }
 
+    // ==========================================
+    // 5. SCHUTZ FÜR E-MAIL & TELEFONNUMMER
+    // ==========================================
+    const emailEl = document.getElementById('safe-email');
+    if (emailEl) {
+        const mail = `${emailEl.dataset.user}@${emailEl.dataset.domain}`;
+        emailEl.href = `mailto:${mail}`;
+        emailEl.textContent = mail;
+    }
+
+    const phoneEl = document.getElementById('safe-phone');
+    if (phoneEl) {
+        const tel = `+${phoneEl.dataset.country} ${phoneEl.dataset.prefix} ${phoneEl.dataset.number}`;
+        const rawTel = `+${phoneEl.dataset.country}${phoneEl.dataset.prefix}${phoneEl.dataset.number}`;
+        phoneEl.href = `tel:${rawTel}`;
+        phoneEl.textContent = `Tel.: ${tel}`;
+    }
+
 });
-
-// Schutz für E-Mail & Telefonnummer vor Bots
-const emailEl = document.getElementById('safe-email');
-if (emailEl) {
-    const mail = `${emailEl.dataset.user}@${emailEl.dataset.domain}`;
-    emailEl.href = `mailto:${mail}`;
-    emailEl.textContent = mail;
-}
-
-const phoneEl = document.getElementById('safe-phone');
-if (phoneEl) {
-    const tel = `+${phoneEl.dataset.country} ${phoneEl.dataset.prefix} ${phoneEl.dataset.number}`;
-    phoneEl.href = `tel:+${phoneEl.dataset.country}${phoneEl.dataset.prefix}${phoneEl.dataset.number}`;
-    phoneEl.textContent = `Tel.: ${tel}`;
-}

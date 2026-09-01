@@ -61,7 +61,7 @@
                     </div>
                     <div class="form-group">
                         <label for="telefon">Deine Telefonnummer</label>
-                        <input type="tel" id="telefon" name="Telefon" placeholder="+493012345678">
+                        <input type="tel" id="telefon" name="Telefon" placeholder="+49 1522 8144559">
                     </div>
                 </div>
 
@@ -118,7 +118,7 @@
 
             <div class="info-block">
                 <h6>Wenn Sie mich sofort <br>erreichen möchten:</h6>
-                <p>Tel-Nr.: <span id="encoded-phone"></span></p>
+                <p><a id="safe-phone" data-country="49" data-prefix="1522" data-number="8144559" href="#">Tel.: Telefonnummer wird geladen...</a></p>
                 <p>von Montag bis Freitag:<br> &bull; 10:00 – 14:00 Uhr<br>&bull; 15:00 – 17:00 Uhr</p>
             </div>
 
@@ -156,20 +156,8 @@
         </div>
     </footer>
 
-    <!-- JS Skript für Telefonnummer-Schutz -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Base64 für "+4915228144559"
-            const encoded = "KzQ5MTUyMjgxNDQ1NTk=";
-            const decoded = atob(encoded); // Decodiert den String im Browser
-
-            const phoneContainer = document.getElementById("encoded-phone");
-            if (phoneContainer) {
-                phoneContainer.innerHTML = `<a href="tel:${decoded}">+49 1522 8144559</a>`;
-            }
-        });
-    </script>
-
+    <!-- Einbindung der zentralen JS-Datei -->
+    <script src="script.js"></script>
 </body>
 
 </html>

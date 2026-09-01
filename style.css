@@ -34,6 +34,12 @@
 /* Sanftes Scrollen für den OnePager */
 html {
     scroll-behavior: smooth;
+
+    /* Verhindert, dass der Header den Sektionsanfang überdeckt */
+    section {
+        scroll-margin-top: 80px;
+        /* An die exakte Höhe deines Headers anpassen */
+    }
 }
 
 /* Standards für den Body */
@@ -62,12 +68,29 @@ h6 {
     margin-top: 0;
 }
 
-h1 { font-size: 86px; }
-h2 { font-size: 60px; }
-h3 { font-size: 54px; }
-h4 { font-size: 44px; }
-h5 { font-size: 34px; }
-h6 { font-size: 28px; }
+h1 {
+    font-size: 86px;
+}
+
+h2 {
+    font-size: 60px;
+}
+
+h3 {
+    font-size: 54px;
+}
+
+h4 {
+    font-size: 44px;
+}
+
+h5 {
+    font-size: 34px;
+}
+
+h6 {
+    font-size: 28px;
+}
 
 /* ==========================================
    5. HEADER & NAVIGATION STYLES
@@ -247,22 +270,56 @@ h6 { font-size: 28px; }
     animation: fadeTextCycle 12s infinite;
 }
 
-.animated-word:nth-child(1) { animation-delay: 0s; }
-.animated-word:nth-child(2) { animation-delay: 3s; }
-.animated-word:nth-child(3) { animation-delay: 6s; }
-.animated-word:nth-child(4) { animation-delay: 9s; }
+.animated-word:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.animated-word:nth-child(2) {
+    animation-delay: 3s;
+}
+
+.animated-word:nth-child(3) {
+    animation-delay: 6s;
+}
+
+.animated-word:nth-child(4) {
+    animation-delay: 9s;
+}
 
 @keyframes fadeTextCycle {
-    0% { opacity: 0; transform: translateY(12px); }
-    5% { opacity: 1; transform: translateY(0); }
-    22% { opacity: 1; transform: translateY(0); }
-    27% { opacity: 0; transform: translateY(-12px); }
-    100% { opacity: 0; }
+    0% {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    5% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    22% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    27% {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 @keyframes smoothCircleFade {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .hero-secondary-subheadline {
@@ -442,25 +499,19 @@ h6 { font-size: 28px; }
     box-shadow: 0 0 16px rgba(255, 255, 255, 0.25);
 }
 
-/* ==========================================
-   SEKTION 3 (INVERSE) - AKTIV-ZUSTAND
-   ========================================== */
-
-/* 1. Inaktive Punkte in Sektion 3 (Tiefschwarz, abgedunkelte Zahl) */
+/* SEKTION 3 (INVERSE) - AKTIV-ZUSTAND */
 .side-nav-link.inverse .nav-number {
     background-color: #111111 !important;
     border: 1px solid rgba(255, 255, 255, 0.25) !important;
 }
 
-/* 2. AKTIVER Punkt in Sektion 3 (Helleres Schwarz/Anthrazit + weiße Zahl) */
 .side-nav-link.inverse.active .nav-number {
-    background-color: #53535a !important; /* Helleres Schwarz / Anthrazit */
+    background-color: #53535a !important;
     border-color: #38383a !important;
-    color: #ffffff !important;           /* Strahlend weiße 03 */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Dezenter Schatten zur Hervorhebung */
+    color: #ffffff !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* 3. Aktives Label "Philosophie" */
 .side-nav-link.inverse.active .nav-label {
     color: var(--color-black) !important;
     font-weight: 600;
@@ -483,7 +534,7 @@ h6 { font-size: 28px; }
     transform: translate(-50%, -50%);
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, var(--color-blue-link) 0%, rgba(0,0,0,0) 70%);
+    background: radial-gradient(circle, var(--color-blue-link) 0%, rgba(0, 0, 0, 0) 70%);
     opacity: 0.15;
     pointer-events: none;
     z-index: 0;
@@ -501,13 +552,12 @@ h6 { font-size: 28px; }
 /* HEADER GRID */
 .projects-header-grid {
     display: grid;
-    grid-template-columns: 5% 1.5fr 0.8fr; 
+    grid-template-columns: 5% 1.5fr 0.8fr;
     gap: 47px;
     margin-bottom: 40px;
     align-items: start;
 }
 
-/* OVERLINES & TYPO */
 .overline-programme,
 .overline-galerie,
 .overline {
@@ -545,9 +595,8 @@ h6 { font-size: 28px; }
     color: var(--color-skin);
     font-weight: 400;
     position: static;
-    transform: none;
-    margin-bottom: 23px;
     transform: translateX(0px);
+    margin-bottom: 23px;
 }
 
 .section-subheadline {
@@ -576,6 +625,12 @@ h6 { font-size: 28px; }
     gap: 12px;
 }
 
+/* Spezieller Offset für die Projekte-Sektion */
+#projekte {
+    scroll-margin-top: 55px;
+    /* Erhöht den Abstand nach oben beim Anspringen */
+}
+
 .filter-btn {
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -597,7 +652,7 @@ h6 { font-size: 28px; }
 /* BODY GRID & SIDEBAR */
 .projects-body-grid {
     display: grid;
-    grid-template-columns: 5% 1.5fr 0.8fr; 
+    grid-template-columns: 5% 1.5fr 0.8fr;
     gap: 32px;
     margin-left: 13px;
 }
@@ -632,7 +687,7 @@ h6 { font-size: 28px; }
     transform: scale(1.1);
 }
 
-/* PROJEKTE GRID (SPALTE 2 & 3 RECHTS) */
+/* PROJEKTE GRID */
 .projects-grid {
     grid-column: 2 / span 2;
     display: grid;
@@ -652,6 +707,7 @@ h6 { font-size: 28px; }
     overflow: hidden;
     background-color: #141414;
     border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
 }
 
 .project-img {
@@ -662,11 +718,27 @@ h6 { font-size: 28px; }
     transition: transform 0.5s ease;
 }
 
-.project-card:hover .project-img {
+.project-img-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: none;
+}
+
+.project-card:hover .project-img-hover {
+    opacity: 1;
+}
+
+.project-card:hover .project-img,
+.project-card:hover .project-img-hover {
     transform: scale(1.04);
 }
 
-/* Formate / Höhen */
 .format-portrait-large .project-image-wrapper {
     aspect-ratio: 3 / 4;
 }
@@ -676,7 +748,17 @@ h6 { font-size: 28px; }
     aspect-ratio: 1 / 1;
 }
 
-/* Card Information */
+.project-card.format-contain .project-img {
+    object-fit: contain;
+}
+
+.project-card.format-contain .project-image-wrapper {
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .project-title {
     font-size: 18px;
     color: var(--color-white);
@@ -696,16 +778,13 @@ h6 { font-size: 28px; }
     color: var(--color-skin);
 }
 
-/* Versteckte Projekte */
 .project-card.is-hidden {
     display: none !important;
 }
 
-/* ==========================================
-   BUTTON: MEHR PROJEKTE ANZEIGEN
-   ========================================== */
+/* BUTTON: MEHR PROJEKTE ANZEIGEN */
 .projects-more-wrapper {
-    grid-column: 1 / -1; /* Nimmt exakt beide Spalten des Projekt-Grids ein */
+    grid-column: 1 / -1;
     display: flex;
     justify-content: center;
     padding-top: 20px;
@@ -742,81 +821,28 @@ h6 { font-size: 28px; }
     transform: translateY(3px);
 }
 
-/* Speziell für Vollbild-Mockups (z. B. ganze Websites) */
-.project-card.format-contain .project-img {
-    object-fit: contain; /* Zeigt das gesamte Bild ohne Anschnitt */
-}
-
-/* Optional: Gibt dem Rahmen z.B. einen weißen oder dunklen Hintergrund, 
-   damit die Ränder oben/unten sauber aussehen */
-.project-card.format-contain .project-image-wrapper {
-    background-color: #ffffff; /* Weiß lässt deinen Website-Screenshot nahtlos übergehen */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Container für mehrere übereinanderliegende Bilder vorbereiten */
-.project-image-wrapper {
-    position: relative; /* Wichtig für die absolute Positionierung des Hover-Bildes */
-}
-
-/* Das zweite Bild liegt exakt über dem ersten Bild */
-.project-img-hover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0; /* Standardmäßig unsichtbar */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Geschmeidiges Einblenden + Zoom */
-    pointer-events: none; /* Klicks gehen durch das Bild hindurch */
-}
-
-/* HOVER-EFFEKT: Zweites Bild einblenden */
-.project-card:hover .project-img-hover {
-    opacity: 1; /* Bild wird sichtbar */
-}
-
-/* ZOOM-EFFEKT: Beide Bilder zoomen beim Hovern mit */
-.project-card:hover .project-img,
-.project-card:hover .project-img-hover {
-    transform: scale(1.04);
-}
-
 .filter-empty-message {
     grid-column: 1 / -1;
     text-align: center;
-    
-    /* 1. Verhindert das Dehnen der Box nach unten */
-    align-self: start; 
-    height: auto; 
-
-    /* 2. Kompakterer Innenabstand (nach Bedarf anpassen) */
-    padding: 30px 20px; 
-
-    /* Restliches Styling */
+    align-self: start;
+    height: auto;
+    padding: 30px 20px;
     color: var(--color-white-subheadline);
     font-family: var(--font-secondary);
     font-size: 18px;
     background: rgba(255, 255, 255, 0.02);
     border: 1px dashed rgba(255, 255, 255, 0.15);
     border-radius: 8px;
-
-    /* Nimm den Text nach oben */
-    margin-top: -1067px; /* Passe den Wert an (z. B. -600px bis -1000px), bis es perfekt sitzt */
     position: relative;
     z-index: 5;
 }
 
 /* ==========================================
-   SEKTION 3: PHILOSOPHIE
+   11. SEKTION 3: PHILOSOPHIE
    ========================================== */
-   
 .philosophy-section {
-    background-color: #f7f8f9; /* Subtiler, technischer Hellgrau-Ton */
-    color: #121212; /* Dunkler Text für hervorragende Lesbarkeit */
+    background-color: #f7f8f9;
+    color: #121212;
     padding: 120px 0;
     width: 100%;
 }
@@ -831,10 +857,9 @@ h6 { font-size: 28px; }
     align-items: start;
 }
 
-/* Linke Spalte */
 .philosophy-intro {
     position: sticky;
-    top: 60px; /* Bleibt beim Scrollen leicht mit im Sichtfeld */
+    top: 60px;
 }
 
 .section-tag {
@@ -848,18 +873,16 @@ h6 { font-size: 28px; }
     transform: translateX(-3px);
 }
 
-/* 2. Die Zahl aus dem Textfluss nehmen & nach links schieben */
 .section-number-3 {
     font-size: 24px;
     font-weight: 400;
-    color: var(#666666);
-    
-    position: absolute;  /* Nimmt die 03 aus dem Textfluss */
-    left: -45px;         /* Schiebt die 03 in den linken Weißraum */
-    top: 6px;            /* Richtet die 03 vertikal an "Fokus" aus */
+    color: #666666;
+    /* FIX: var(#666666) korrigiert */
+    position: absolute;
+    left: -45px;
+    top: 6px;
 }
 
-/* 1. Dem Elternelement die absolute Positionierung der Zahl erlauben */
 .philosophy-title {
     font-size: 48px;
     font-weight: 700;
@@ -868,8 +891,7 @@ h6 { font-size: 28px; }
     margin-bottom: 24px;
     color: var(--color-black);
     transform: translateX(-7px);
-    
-    position: relative; /* Absoluter Anker für die 03 */
+    position: relative;
 }
 
 .philosophy-desc {
@@ -880,7 +902,6 @@ h6 { font-size: 28px; }
     transform: translateX(-5px);
 }
 
-/* Rechte Spalte: Vertikale Liste */
 .philosophy-list {
     display: flex;
     flex-direction: column;
@@ -888,7 +909,7 @@ h6 { font-size: 28px; }
 
 .philosophy-item {
     padding: 36px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12); /* Feine Trennlinien wie in Bild 1 */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .philosophy-item:first-child {
@@ -915,7 +936,6 @@ h6 { font-size: 28px; }
     max-width: 500px;
 }
 
-/* Responsive Anpassung für Tablets & Smartphones */
 @media (max-width: 868px) {
     .philosophy-section {
         padding: 80px 0;
@@ -936,18 +956,17 @@ h6 { font-size: 28px; }
 }
 
 /* ==========================================
-   SEKTION 4: KONTAKT
+   12. SEKTION 4: KONTAKT
    ========================================== */
 .contact-section {
     position: relative;
     background-color: var(--color-black, #0d0d0d);
     color: var(--color-white, #ffffff);
-    padding: 120px 0; /* Um 10px reduziert (von 160px auf 150px) */
+    padding: 120px 0;
     overflow: hidden;
     text-align: center;
 }
 
-/* Radialer Verlauf analog zu Sektion 1 */
 .contact-bg-glow {
     position: absolute;
     top: 50%;
@@ -956,7 +975,7 @@ h6 { font-size: 28px; }
     width: 700px;
     height: 700px;
     background: radial-gradient(circle, var(--color-radial-black, #2E2F33) 0%, rgba(0, 0, 0, 0) 70%);
-    opacity: 0.8; /* Erhöht für einen sichtbaren, weichen Kreis-Effekt */
+    opacity: 0.8;
     pointer-events: none;
     z-index: 0;
 }
@@ -972,7 +991,6 @@ h6 { font-size: 28px; }
     align-items: center;
 }
 
-/* Nummer & Label */
 .contact-number {
     font-size: 14px;
     color: var(--color-skin, #d1a374);
@@ -988,7 +1006,6 @@ h6 { font-size: 28px; }
     margin-bottom: 24px;
 }
 
-/* Headline */
 .contact-title {
     font-size: 56px;
     font-weight: 700;
@@ -997,7 +1014,6 @@ h6 { font-size: 28px; }
     color: var(--color-white, #ffffff);
 }
 
-/* Invertierter Button */
 .contact-action {
     margin-bottom: 38px;
 }
@@ -1019,7 +1035,6 @@ h6 { font-size: 28px; }
     box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
 }
 
-/* Kontaktdaten (Mail & Tel) */
 .contact-email,
 .contact-phone {
     font-size: 16px;
@@ -1029,7 +1044,7 @@ h6 { font-size: 28px; }
 }
 
 .contact-email {
-    margin-bottom: 8px; /* Kleiner Abstand zur Telefonnummer */
+    margin-bottom: 8px;
 }
 
 .contact-email:hover,
@@ -1037,11 +1052,11 @@ h6 { font-size: 28px; }
     color: var(--color-white, #ffffff);
 }
 
-/* Responsive Anpassung für Mobilgeräte */
 @media (max-width: 768px) {
     .contact-section {
         padding: 90px 0;
     }
+
     .contact-title {
         font-size: 40px;
         margin-bottom: 36px;
@@ -1049,10 +1064,7 @@ h6 { font-size: 28px; }
 }
 
 /* ==========================================
-   FOOTER
-   ========================================== */
-/* ==========================================
-   FOOTER (STICKY & BALANCED)
+   13. FOOTER
    ========================================== */
 .site-footer {
     position: sticky;
@@ -1060,7 +1072,7 @@ h6 { font-size: 28px; }
     z-index: 100;
     background-color: var(--color-black, #0d0d0d);
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 20px 0; /* Slightly tighter vertical padding for a sleek sticky bar */
+    padding: 20px 0;
     font-size: 14px;
 }
 
@@ -1068,8 +1080,6 @@ h6 { font-size: 28px; }
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
-    
-    /* 3-column Grid ensures the center column is dead-center regardless of text lengths */
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
@@ -1082,12 +1092,11 @@ h6 { font-size: 28px; }
     justify-self: start;
 }
 
-/* Social Media Icons (Centered) */
 .footer-social {
     display: flex;
     align-items: center;
     gap: 16px;
-    justify-self: center; /* Locks icons to the true center */
+    justify-self: center;
 }
 
 .footer-social a {
@@ -1109,7 +1118,6 @@ h6 { font-size: 28px; }
     object-fit: contain;
 }
 
-/* Navigation Links (Right-aligned) */
 .footer-nav {
     display: flex;
     gap: 28px;
@@ -1118,21 +1126,20 @@ h6 { font-size: 28px; }
 }
 
 .footer-nav a {
-    position: relative; /* WICHTIG: Damit die Linie am Text bleibt */
+    position: relative;
     color: var(--color-white-subheadline, #86868b);
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
-/* Die Start-Position der Linie (0% Breite, unsichtbar) */
 .footer-nav a::after {
     content: '';
     position: absolute;
-    bottom: -4px; /* Abstand zwischen Text und Linie */
+    bottom: -4px;
     left: 0;
     width: 0%;
-    height: 1px; /* Dicke der Linie */
-    background-color: var(--color-white, #ffffff); /* Farbe der Linie */
+    height: 1px;
+    background-color: var(--color-white, #ffffff);
     transition: width 0.3s ease-in-out;
 }
 
@@ -1140,15 +1147,13 @@ h6 { font-size: 28px; }
     color: var(--color-white, #ffffff);
 }
 
-/* Beim Hovern fährt die Linie auf 100% aus */
 .footer-nav a:hover::after {
     width: 100%;
 }
 
-/* Responsive behavior for mobile */
 @media (max-width: 768px) {
     .site-footer {
-        position: static; /* Disables sticky positioning on mobile to save screen real estate */
+        position: static;
     }
 
     .footer-container {
@@ -1165,83 +1170,81 @@ h6 { font-size: 28px; }
 }
 
 /* ==========================================
-   10. UNTERSEITEN (IMPRESSUM & RECHTLICHES)
+   14. UNTERSEITEN (IMPRESSUM & RECHTLICHES)
    ========================================== */
 body.legal-page {
-    /* Helles Off-White als Hintergrund */
     background-color: #f7f8f9;
     color: #1d1d1f;
     min-height: 100vh;
 }
 
-/* Back Link Header */
+/* Zentrierte Ausrichtung & Abstände für Unterseiten-Header */
 .legal-header {
-    max-width: 800px;
+    max-width: 1200px;
+    /* Gleiche maximale Breite wie dein Hauptcontainer */
     margin: 0 auto;
-    padding: 40px 24px 0;
+    padding: 32px 24px 0 24px;
+    /* Seitenabstand identisch zum Container */
+    display: flex;
+    justify-content: flex-start;
 }
 
-.back-link {
-    color: #86868b; /* Dezentere Farbe für den Zurück-Link */
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
-    transition: color 0.2s ease, transform 0.2s ease;
-    display: inline-block;
+/* Styling & Positionierung des Zurück-Links */
+.legal-header .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+    text-align: left;
 }
 
 .back-link:hover {
-    color: #1d1d1f; /* Dunkler beim Hovern */
+    color: #1d1d1f;
     transform: translateX(-4px);
 }
 
-/* Hauptcontainer */
 .legal-container {
     max-width: 800px;
     margin: 0 auto;
     padding: 40px 24px 100px;
 }
 
-/* Kicker Tag */
 .legal-tag {
     font-size: 13px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--color-skin, #d1a374); /* Dein Akzentton als schöner Kontrast */
+    color: var(--color-skin, #d1a374);
     font-weight: 600;
     display: block;
 }
 
-/* Exakte 55px H1 Headline */
 .legal-title {
     font-size: 55px;
     font-weight: 700;
     letter-spacing: -1px;
     margin-top: 8px;
     margin-bottom: 56px;
-    color: #1d1d1f; /* Tiefes Schwarz-Anthrazit */
+    color: #1d1d1f;
     line-height: 1.1;
 }
 
-/* Sektionen */
 .legal-block {
     margin-bottom: 44px;
 }
 
-/* H4 für untere Hauptheadlines */
 .legal-block h4 {
     font-size: 20px;
     font-weight: 600;
-    color: #1d1d1f; /* Satte Hauptüberschrift */
+    color: #1d1d1f;
     margin-bottom: 12px;
     letter-spacing: -0.3px;
 }
 
-/* H3 für Unterebenen (I, II, III) */
 .legal-sub-block {
     margin-top: 28px;
     padding-left: 16px;
-    border-left: 2px solid var(--color-radial-black); /* Akzentlinie links */
+    border-left: 2px solid var(--color-radial-black);
 }
 
 .legal-sub-block h3 {
@@ -1251,17 +1254,16 @@ body.legal-page {
     margin-bottom: 8px;
 }
 
-/* Fließtext & Absätze */
 .legal-block p,
 .legal-sub-block p {
     font-size: 15px;
     line-height: 1.65;
-    color: #424245; /* Dezenteres, weicheres Dunkelgrau für bessere Lesbarkeit */
+    color: #424245;
     margin: 0;
 }
 
 .legal-block strong {
-    color: #1d1d1f; /* Hervorhebungen bleiben kräftig */
+    color: #1d1d1f;
 }
 
 .legal-block a {
@@ -1274,27 +1276,24 @@ body.legal-page {
     opacity: 0.6;
 }
 
-/* Mobile Responsive Anpassung */
 @media (max-width: 768px) {
     .legal-title {
         font-size: 38px;
         margin-bottom: 40px;
     }
-    
+
     .legal-block h4 {
         font-size: 18px;
     }
-    
+
     .legal-sub-block {
         padding-left: 12px;
     }
 }
 
-
 /* ==========================================
-   EIGENSTÄNDIGE KONTAKTSEITE (ISOLIERT)
+   15. EIGENSTÄNDIGE KONTAKTSEITE (ISOLIERT)
    ========================================== */
-
 .page-contact-wrapper {
     max-width: 1200px;
     margin: 40px auto;
@@ -1377,7 +1376,6 @@ body.legal-page {
     background-color: #006699;
 }
 
-/* Info-Spalte rechts */
 .page-contact-info-section .info-block {
     margin-left: 40px;
     font-size: 16px;
@@ -1385,7 +1383,6 @@ body.legal-page {
     margin-bottom: 40px;
 }
 
-.page-contact-info-section h6, 
 .page-contact-info-section h6 {
     margin-bottom: 20px;
     line-height: 120%;
@@ -1411,11 +1408,11 @@ body.legal-page {
     height: 40px;
 }
 
-/* Responsive Anpassung */
 @media (max-width: 768px) {
     .page-contact-wrapper {
         grid-template-columns: 1fr;
     }
+
     .page-contact-form .form-row {
         grid-template-columns: 1fr;
     }
@@ -1423,4 +1420,1162 @@ body.legal-page {
 
 .info-block-2 {
     margin-left: 40px;
+}
+
+/* ==========================================================================
+   TABLET RESPONSIVE STYLES (Bildschirme bis max. 1024px Breite)
+   ========================================================================== */
+
+@media screen and (max-width: 1024px) {
+
+    /* --- GLOBAL & ABSTÄNDE --- */
+    /* Fester, generöser Sicherheitsabstand links und rechts */
+    section {
+        padding-left: 40px !important;
+        padding-right: 40px !important;
+        scroll-margin-top: 100px;
+        /* Passt den Anker-Offset für Tablets an */
+    }
+
+    /* Die rechte Side-Nav (01 - 04) nimmt zu viel Platz weg und wird auf Tablets ausgeblendet */
+    .side-nav {
+        display: none !important;
+    }
+
+
+    /* ==========================================================================
+   TABLET RESPONSIVE STYLES (OHNE HTML-ÄNDERUNG & OHNE DESKTOP-EINFLUSS)
+   ========================================================================== */
+
+    @media screen and (max-width: 1024px) {
+
+        /* Fester Sicherheitsabstand links/rechts & Ausblenden der Side-Nav */
+        section {
+            padding-left: 40px !important;
+            padding-right: 40px !important;
+            scroll-margin-top: 100px;
+        }
+
+        .side-nav {
+            display: none !important;
+        }
+
+        /* --- HERO-SECTION ALS GRID AUFBAUEN --- */
+        .hero-container {
+            display: grid !important;
+            grid-template-columns: 1fr !important;
+            /* 1-spaltig */
+            text-align: center !important;
+            justify-items: center !important;
+            gap: 16px !important;
+        }
+
+        /* Der linke/obere Textbereich */
+        .hero-text-content {
+            display: contents !important;
+            /* Löst den Container auf, damit wir direkte Kontrolle über die Kinder haben */
+        }
+
+        /* 1. Hauptüberschrift ganz oben */
+        .hero-main-title,
+        .hero-text-content h1 {
+            grid-row: 1 !important;
+            font-size: 2.2rem !important;
+            margin-bottom: 0 !important;
+        }
+
+        /* 2. Untertitel darunter */
+        .hero-sub-title,
+        .hero-text-content>p:first-of-type {
+            grid-row: 2 !important;
+            font-size: 1rem !important;
+            max-width: 550px;
+        }
+
+        /* 3. Buttons in der Mitte */
+        .hero-buttons {
+            grid-row: 3 !important;
+            display: flex !important;
+            justify-content: center !important;
+            gap: 16px !important;
+            margin: 12px 0 20px 0 !important;
+            width: 100% !important;
+        }
+
+        /* 4. "Hi, ich bin Jahi..." Überschrift (kleiner skaliert) */
+        .hero-intro-title,
+        .hero-text-content h2 {
+            grid-row: 4 !important;
+            font-size: 1.6rem !important;
+            line-height: 1.3 !important;
+            margin-top: 10px !important;
+        }
+
+        /* 5. Beschreibungstext */
+        .hero-description,
+        .hero-text-content>p:last-of-type {
+            grid-row: 5 !important;
+            font-size: 0.95rem !important;
+            max-width: 500px;
+            margin-bottom: 24px !important;
+        }
+
+        /* 6. Portrait & Kreis ganz unten */
+        .hero-image-wrapper {
+            grid-row: 6 !important;
+            position: relative !important;
+            width: 100% !important;
+            max-width: 380px !important;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: flex-end !important;
+            margin: 0 auto !important;
+        }
+
+        .hero-blue-circle {
+            position: absolute !important;
+            bottom: 0 !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            width: 280px !important;
+            height: 280px !important;
+            border-radius: 50% !important;
+            z-index: 1 !important;
+        }
+
+        .hero-portrait {
+            position: relative !important;
+            z-index: 2 !important;
+            width: 100% !important;
+            max-width: 340px !important;
+            height: auto !important;
+            display: block !important;
+            margin: 0 auto !important;
+        }
+
+        /* --- LOESUNG FUER AUFGABE 1: Buttons hochschieben --- */
+        @media screen and (max-width: 1024px) {
+
+            .hero-text-block {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+            }
+
+            /* 1. "PROFIL" ganz oben */
+            .hero-text-block .overline {
+                order: 1 !important;
+            }
+
+            /* 2. "01 Über mich" Headline */
+            .hero-text-block .section-title {
+                order: 2 !important;
+            }
+
+            /* 3. Erster Subtext ("Grafik- & Webdesigner...") */
+            .hero-text-block .hero-subheadline {
+                order: 3 !important;
+                margin-bottom: 24px !important;
+            }
+
+            /* 4. DIE BUTTONS (schieben sich jetzt hier hin!) */
+            .hero-text-block .hero-actions {
+                order: 4 !important;
+                display: flex !important;
+                justify-content: center !important;
+                gap: 16px !important;
+                margin-top: 14px !important;
+                margin-bottom: 52px !important;
+                width: 100% !important;
+            }
+
+            /* 5. Haupt-Headline ("Hi, ich bin Jahi...") */
+            .hero-text-block .hero-main-title {
+                order: 5 !important;
+            }
+
+            /* 6. Zweiter Subtext ("Gutes Design beginnt an der Wurzel...") */
+            .hero-text-block .hero-secondary-subheadline {
+                order: 6 !important;
+            }
+
+            /* --- LOESUNG FUER AUFGABE 3: Zentrieren & Abstand verringern --- */
+            .hero-main-title br {
+                display: none !important;
+            }
+
+            .hero-main-title .animated-text-container {
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                width: 100% !important;
+                margin-top: -8px !important;
+                /* Zieht das Wort etwas näher an "Hi, ich bin Jahi -" heran */
+                text-align: center !important;
+            }
+
+            .hero-main-title .animated-word {
+                text-align: center !important;
+                width: 100% !important;
+            }
+
+            /* --- LOESUNG FUER AUFGABE 4: Portrait vergrössern & Kreis dahinter setzen --- */
+
+            /* --- LOESUNG FUER DEN LETZTEN SCHRITT: Portrait zentrieren, vergrössern & Kreis anheben --- */
+
+            .hero-visual {
+                position: relative !important;
+                width: 100% !important;
+                max-width: 600px !important;
+                /* Bietet genug Platz für das große Portrait */
+                min-height: 480px !important;
+                /* Definiert eine feste Höhe für die perfekte Überlagerung */
+                display: flex !important;
+                justify-content: center !important;
+                align-items: flex-end !important;
+                margin: 30px auto 0 auto !important;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+            }
+
+            /* Blauer Kreis: Etwas nach oben gezogen (bottom: 20px), um höher hinter dem Kopf zu sitzen */
+            .hero-blue-circle {
+                position: absolute !important;
+                top: auto !important;
+                bottom: 300px !important;
+                /* Schiebt den Kreis in der Höhe höher */
+                left: 50% !important;
+                right: auto !important;
+                transform: translateX(-50%) scale(1.2) !important;
+                width: 420px !important;
+                /* Kreis passend zum größeren Portrait skaliert */
+                height: 420px !important;
+                border-radius: 50% !important;
+                z-index: 1 !important;
+            }
+
+            /* Portrait zentrieren & 1,5-fach skalieren */
+            .hero-portrait {
+                position: relative !important;
+                z-index: 2 !important;
+                width: 100% !important;
+                max-width: 520px !important;
+                /* Gibt dem skalierten Bild genug Raum */
+                height: auto !important;
+                display: block !important;
+                margin: 0 auto !important;
+                transform: translateX(-5%) scale(1.4) !important;
+                /* Vergrößert das Portrait um 1.5x */
+                transform-origin: bottom center !important;
+                /* Skaliert sauber nach oben/außen ab dem Boden */
+            }
+
+            /* --- KORREKTUR: Header-Grid auflösen & exakt zentrieren --- */
+
+            /* Löst das 3-Spalten-Grid für Tablet auf */
+            .projects-header-grid {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+                width: 100% !important;
+                gap: 20px !important;
+            }
+
+            /* 1. GALERIE & Titel (exakt zentriert ganz oben) */
+            .header-col-galerie {
+                order: 1 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+                width: 100% !important;
+            }
+
+            .overline-galerie {
+                text-align: center !important;
+                display: inline-block !important;
+                transform: translateX(-40px) !important;
+                /* Passt die Position nach links an */
+                width: 100% !important;
+            }
+
+            /* 2. EINFÜHRUNG (zentriert direkt darunter) */
+            .header-col-design {
+                order: 2 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+                max-width: 650px !important;
+                width: 100% !important;
+                margin: 0 auto !important;
+                transform: translateX(-37px) !important;
+            }
+
+            .einfuehrung-text-small {
+                text-align: center !important;
+                margin-bottom: -60px;
+            }
+
+            /* 1. Subheadline zentrieren */
+            .section-subheadline {
+                text-align: center !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                width: 100% !important;
+                display: block !important;
+                transform: translateX(-35px) !important;
+                /* Verschiebt den Text nach links */
+                /* Alternativ geht auch: margin-right: 50px !important; */
+            }
+
+            /* 2. Filter-Buttons zentrieren */
+            .projects-filter {
+                display: flex !important;
+                justify-content: center !important;
+                flex-wrap: wrap !important;
+                width: 100% !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                margin-bottom: 30px;
+                transform: translateX(-45px) !important;
+            }
+
+            /* 4. PROGRAMME-TITEL (wandert nach unten und richtet sich links aus) */
+            .header-col-programs {
+                order: 4 !important;
+                display: block !important;
+                width: 100% !important;
+                text-align: left !important;
+                margin-top: 10px !important;
+                padding-left: 4px !important;
+                transform: translateY(-140px) !important;
+                /* Bündige Ausrichtung über der Icon-Leiste */
+            }
+
+            .overline-programme {
+                text-align: left !important;
+                display: inline-block !important;
+            }
+
+            /* Programme-Logos auf Tablets voll farbig und sichtbar darstellen */
+            .sidebar-programs .program-item img,
+            .sidebar-programs .program-item {
+                filter: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+
+            /* Projekt-Grid rechts einrücken und Seitenabstand geben */
+            .projects-grid {
+                padding-right: 34px !important;
+                /* Abstand zum rechten Bildschirmrand */
+                box-sizing: border-box !important;
+            }
+
+            /* Container anpassen, um horizontalen Overflow/Scrollen zu verhindern */
+            .projects-body-grid {
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+                padding-right: 16px !important;
+            }
+
+            /* Button weiter nach links verschieben */
+            .projects-more-wrapper {
+                grid-column: 1 / -1 !important;
+                display: flex !important;
+                justify-content: center !important;
+                width: 100% !important;
+                transform: translateX(-65px) !important;
+                /* Verschiebt den Button nach links */
+                margin-top: 40px !important;
+                margin-bottom: 20px !important;
+            }
+
+            /* Falls der Button selbst ein block-Element ist */
+            .btn-more-projects {
+                margin: 0 auto !important;
+            }
+
+            /* --- Sektion 3: Philosophie (Streng 2 Spalten auf Tablet) --- */
+
+            .philosophy-section {
+                width: 100% !important;
+                max-width: 100% !important;
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+                box-sizing: border-box !important;
+            }
+
+            .philosophy-container {
+                display: grid !important;
+                grid-template-columns: 1fr 1.2fr !important;
+                /* Exakt 2 Spalten */
+                gap: 32px !important;
+                padding-left: 50px !important;
+                /* 20px Abstand links */
+                padding-right: 20px !important;
+                /* 20px Abstand rechts */
+                box-sizing: border-box !important;
+                width: 100% !important;
+                margin: 0 !important;
+                max-width: 100% !important;
+            }
+
+            /* Linien sauber im Container begrenzen */
+            .philosophy-list {
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+
+            .philosophy-item {
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+
+            /* --- Sektion 4: Kontakt Abstände verringern --- */
+
+            /* Innenabstand der Sektion oben/unten reduzieren */
+            .contact-section {
+                padding-top: 100px !important;
+                padding-bottom: 130px !important;
+            }
+
+            /* Gesamten Container kompakter ziehen */
+            .contact-container {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 12px !important;
+                /* Steuert den Grundabstand zwischen ALLEN Elementen */
+            }
+
+            /* Margins der einzelnen Elemente zurücksetzen */
+            .contact-number,
+            .contact-tag,
+            .contact-title,
+            .contact-action,
+            .contact-email,
+            .contact-phone {
+                margin-top: 0 !important;
+                margin-bottom: -28px !important;
+            }
+
+            /* Spezifische Anpassung für Haupt-Titel & Button */
+            .contact-title {
+                margin-bottom: -22px !important;
+            }
+
+            .contact-action {
+                margin-bottom: -10px !important;
+            }
+        }
+    }
+
+    /* --- 2. PROJEKTE --- */
+    .projects-container {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    /* 2er-Raster der Galeriekarten bleibt erhalten, skaliert aber dynamisch */
+    .projects-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 24px !important;
+    }
+
+    .project-card {
+        width: 100% !important;
+    }
+
+    /* Programme-Leiste am linken Rand kompakter darstellen */
+    .sidebar-programs {
+        width: auto !important;
+        display: flex;
+        flex-direction: row !important;
+        /* Auf Tablet waagerecht statt senkrecht */
+        justify-content: center;
+        gap: 16px;
+        margin-bottom: 24px;
+    }
+
+    .program-item img {
+        width: 28px !important;
+        height: 28px !important;
+    }
+
+
+    /* --- 3. FOKUS IM DESIGN (PHILOSOPHIE) --- */
+    /* Karten untereinander stapeln, um Lesbarkeit der Texte zu garantieren */
+    .philosophy-container {
+        flex-direction: column !important;
+        gap: 32px !important;
+    }
+
+    .philosophy-card {
+        width: 100% !important;
+    }
+
+
+    /* --- 4. KONTAKT --- */
+    .contact-container {
+        flex-direction: column !important;
+        gap: 40px !important;
+    }
+
+    .contact-info,
+    .contact-form-wrapper {
+        width: 100% !important;
+    }
+
+    .contact-title {
+        font-size: 2.8rem !important;
+        text-align: center;
+    }
+
+    /* --- Bündige Ausrichtung für alle Unterseiten --- */
+
+    /* Container und Header auf einheitliche Breite und identische Ränder setzen */
+    .legal-header,
+    .legal-container {
+        width: 100% !important;
+        max-width: 900px !important;
+        /* Oder dein genutzter max-width Wert */
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-left: 20px !important;
+        /* Fester linker Rand */
+        padding-right: 20px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Zurück-Link exakt linksbündig ohne eigenes Margin-Offset setzen */
+    .legal-header {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .back-link {
+        display: inline-block !important;
+        margin-left: 0 !important;
+        padding-left: 40px !important;
+        text-align: left !important;
+    }
+
+    /* Titel & Tag exakt an die Kante ausrichten */
+    .legal-tag,
+    .legal-title {
+        margin-left: 0 !important;
+        padding-left: 40px !important;
+        text-align: left !important;
+    }
+
+    /* Nur die Überschrift und den Hinweis im Kontaktformular linksbündig ausrichten */
+    .page-contact-form-section .legal-title,
+    .page-contact-form-section .form-instruction {
+        text-align: left !important;
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    /* Haupt-Wrapper einspaltig nach links ausrichten */
+    .page-contact-wrapper {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        width: 100% !important;
+    }
+
+    /* Unteren Info-Block linksbündig unter den Senden-Button setzen */
+    .page-contact-info-section {
+        width: 100% !important;
+        margin-top: -100px !important;
+        /* Abstand nach oben zum Senden-Button */
+        margin-bottom: 60px !important;
+        /* Sicherheitsabstand zum Footer */
+        text-align: left !important;
+        align-self: flex-start !important;
+    }
+
+    /* Alle Texte und Überschriften im Info-Block strikt linksbündig */
+    .page-contact-info-section h6,
+    .page-contact-info-section p,
+    .page-contact-info-section .info-block,
+    .page-contact-info-section .info-block-2 {
+        text-align: left !important;
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    @media screen and (max-width: 767px) {
+
+        /* --- HEADER & NAVIGATION (Einzeilig fix für 330px) --- */
+        .site-header {
+            position: relative !important;
+            width: 100% !important;
+            background: #111111 !important;
+            padding: 0 !important;
+            z-index: 1000 !important;
+        }
+
+        .header-container {
+            display: flex !important;
+            flex-direction: row !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            padding: 20px 22px !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+        }
+
+        .logo-link {
+            display: flex !important;
+            align-items: center !important;
+            flex-shrink: 0 !important;
+        }
+
+        .logo-img {
+            height: 26px !important;
+            width: auto !important;
+            display: block !important;
+        }
+
+        .main-nav {
+            display: block !important;
+            flex-grow: 1 !important;
+        }
+
+        .main-nav ul {
+            display: flex !important;
+            flex-direction: row !important;
+            justify-content: flex-end !important;
+            align-items: center !important;
+            gap: 5px !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            list-style: none !important;
+        }
+
+        .main-nav ul li {
+            display: inline-block !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .main-nav ul li a {
+            font-size: 0.68rem !important;
+            color: #ffffff !important;
+            text-decoration: none !important;
+            white-space: nowrap !important;
+            letter-spacing: -0.3px !important;
+        }
+
+        /* --- HERO CONTAINER & ZENTRIERUNG --- */
+        .hero-section,
+        .hero-container {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            padding: 0 8px !important;
+            margin: 0 auto !important;
+            box-sizing: border-box !important;
+        }
+
+        .hero-text-block {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 auto !important;
+            padding: 0 !important;
+            box-sizing: border-box !important;
+            transform: none !important;
+            position: relative !important;
+        }
+
+        /* Manuelle Zeilenumbrüche (<br>) auf Mobile ignorieren */
+        .hero-text-block br {
+            display: none !important;
+        }
+
+        /* Zahl "01" auf Mobilgeräten vollständig ausblenden */
+        .hero-text-block .section-number,
+        .section-number {
+            display: none !important;
+        }
+
+        /* 1. PLATZIERUNG: "PROFIL" Badge ganz oben */
+        .hero-text-block .overline {
+            order: 1 !important;
+            display: block !important;
+            font-size: 0.75rem !important;
+            letter-spacing: 1.5px !important;
+            text-align: center !important;
+            width: 100% !important;
+            margin: 0 auto 4px auto !important;
+            padding-top: 50px;
+        }
+
+        /* 2. PLATZIERUNG: Headline "Über mich" direkt darunter */
+        .hero-text-block .section-title {
+            order: 2 !important;
+            display: block !important;
+            font-size: 2.00rem !important;
+            line-height: 1.2 !important;
+            text-align: center !important;
+            width: 100% !important;
+            margin: 10px auto 22px auto !important;
+        }
+
+        /* 3. Subtext ("Grafik- & Webdesigner...") */
+        .hero-text-block .hero-subheadline {
+            order: 3 !important;
+            font-size: 0.82rem !important;
+            line-height: 1.4 !important;
+            text-align: center !important;
+            width: 100% !important;
+            margin: 0 auto 16px auto !important;
+        }
+
+        /* 4. Haupt-Headline */
+        .hero-text-block .hero-main-title {
+            order: 4 !important;
+            font-size: 2.00rem !important;
+            line-height: 1.25 !important;
+            text-align: center !important;
+            width: 100% !important;
+            margin: 2px auto 10px auto !important;
+        }
+
+        .hero-main-title .animated-text-container {
+            position: relative !important;
+            display: block !important;
+            width: 100% !important;
+            height: 1.4em !important;
+            margin: 4px auto 0 auto !important;
+            padding: 0 !important;
+            box-sizing: border-box !important;
+        }
+
+        .hero-main-title .animated-word {
+            position: absolute !important;
+            left: 0 !important;
+            top: 13px !important;
+            width: 100% !important;
+            margin: -10px 0 0 0 !important;
+            padding: 0 !important;
+            text-align: center !important;
+            white-space: nowrap !important;
+        }
+
+        /* 5. Zweiter Subtext ("Gutes Design beginnt...") */
+        .hero-text-block .hero-secondary-subheadline {
+            order: 5 !important;
+            font-size: 0.8rem !important;
+            line-height: 1.4 !important;
+            text-align: center !important;
+            width: 100% !important;
+            margin: 0 auto 40px auto !important;
+        }
+
+        /* 6. Buttons schmaler & untereinander */
+        .hero-text-block .hero-actions {
+            order: 6 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            gap: 10px !important;
+            width: 100% !important;
+            max-width: 260px !important;
+            margin: 0 auto !important;
+        }
+
+        .hero-text-block .hero-actions a {
+            width: 100% !important;
+            padding: 9px 12px !important;
+            font-size: 0.82rem !important;
+            text-align: center !important;
+            box-sizing: border-box !important;
+        }
+
+        .hero-blue-circle {
+            margin-bottom: -280px;
+        }
+
+        /* ==========================================
+        PROJEKTE SEKTION - SMARTPHONE (1 SPALTE)
+        ========================================== */
+
+        /* 1. Header & Textbereiche untereinander ausrichten */
+        .projects-header-grid {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+            gap: 20px !important;
+        }
+
+        .header-col-programs {
+            display: none !important;
+            /* Versteckt das doppelte Top-Word "PROGRAMME" */
+        }
+
+        /* Radikaler Zentrierungs-Reset für den "Projekte"-Titel */
+        .header-col-galerie,
+        .header-col-galerie * {
+            box-sizing: border-box !important;
+        }
+
+        .projects-section h1,
+        .projects-section h2,
+        .header-col-galerie h1,
+        .header-col-galerie h2,
+        .header-col-galerie .section-title {
+            display: block !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            text-align: center !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            padding-left: 0 !important;
+            padding-right: 78px !important;
+            position: static !important;
+            left: auto !important;
+            right: auto !important;
+            transform: none !important;
+            letter-spacing: normal !important;
+            /* Verhindert optische Verschiebung durch extremes Letter-Spacing */
+        }
+
+        .header-col-galerie,
+        .header-col-design {
+            width: 100% !important;
+            text-align: center !important;
+        }
+
+        .einfuehrung-text-small {
+            margin: 0 auto !important;
+            max-width: 90% !important;
+        }
+
+        /* 2. Haupt-Layout auf 1 Spalte umstellen */
+        .projects-body-grid {
+            display: flex !important;
+            flex-direction: column !important;
+            width: 100% !important;
+            gap: 30px !important;
+        }
+
+        /* 3. Programme-Icons unter den Einführungstext setzen & in 3 Zeilen zentrieren */
+        .sidebar-programs {
+            width: 100% !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+            margin: 20px 0 30px 0 !important;
+        }
+
+        /* Überschrift zentrieren */
+        .sidebar-programs::before {
+            content: "PROGRAMME";
+            display: block !important;
+            width: 100% !important;
+            text-align: center !important;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 15px !important;
+            padding-left: 15px;
+        }
+
+        /* ERZWINGT NEBENEINANDER-AUSRICHTUNG */
+        .programs-list,
+        .sidebar-programs ul,
+        .sidebar-programs div {
+            display: flex !important;
+            flex-direction: row !important;
+            /* Spalte aufheben, Icons nebeneinander */
+            flex-wrap: wrap !important;
+            /* Umbruch erlauben */
+            justify-content: center !important;
+            align-items: center !important;
+            gap: 14px 8px !important;
+            max-width: 290px !important;
+            /* Begrenzt Breite für ~3 Zeilen (ca. 5-6 Icons pro Zeile) */
+            margin: 0 auto !important;
+            padding-left: 10px !important;
+        }
+
+        /* Einzelne Items überschreiben */
+        .program-item,
+        .programs-list li,
+        .programs-list a,
+        .programs-list img {
+            display: inline-block !important;
+            width: 36px !important;
+            height: 36px !important;
+            max-width: 36px !important;
+            margin: 0 !important;
+            object-fit: contain !important;
+        }
+
+        /* 4. Projekte-Grid zentrieren & Seitenabstände ausgleichen */
+        .projects-grid {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            gap: 35px !important;
+            margin: 0 auto !important;
+            padding: 0 6px !important;
+            margin-left: -46px !important;
+            /* Sorgt für gleichmäßigen Rand links & rechts */
+            box-sizing: border-box !important;
+        }
+
+        .project-card {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 auto !important;
+            box-sizing: border-box !important;
+        }
+
+        .project-image-wrapper {
+            width: 100% !important;
+            border-radius: 12px !important;
+            overflow: hidden !important;
+        }
+
+        .project-img {
+            width: 100% !important;
+            height: auto !important;
+            display: block !important;
+        }
+
+        .project-info {
+            text-align: left !important;
+            padding: 12px 4px 0 4px !important;
+        }
+
+        /* Button Wrapper & Button exakt zentrieren */
+        .projects-more-wrapper {
+            width: 100% !important;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            margin: 30px auto 10px auto !important;
+            padding: 0 !important;
+            transform: translateX(0px) !important;
+        }
+
+        .projects-more-wrapper a,
+        .projects-more-wrapper button,
+        .projects-more-btn {
+            display: inline-flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            margin: 0 auto !important;
+            max-width: fit-content !important;
+            text-align: center !important;
+        }
+
+        /* ==========================================
+   PHILOSOPHIE SEKTION - MOBILE (1 SPALTE)
+   ========================================== */
+
+        /* 1. Hauptcontainer auf 1 Spalte untereinander umstellen */
+        .philosophy-container {
+            display: flex !important;
+            flex-direction: column !important;
+            width: 100% !important;
+            gap: 40px !important;
+            padding: 0 20px !important;
+            box-sizing: border-box !important;
+        }
+
+        /* 2. Linke Spalte (Intro) zentrieren */
+        .philosophy-intro {
+            width: 100% !important;
+            max-width: 100% !important;
+            text-align: center !important;
+        }
+
+        .section-tag {
+            display: block !important;
+            text-align: center !important;
+            width: 100% !important;
+        }
+
+        /* Nummer "03" auf Mobile ausblenden */
+        .section-number-3 {
+            display: none !important;
+        }
+
+        .philosophy-title {
+            font-size: 3.8rem !important;
+            line-height: 1.2 !important;
+            margin: 10px auto 25px auto !important;
+            text-align: center !important;
+        }
+
+        .philosophy-desc {
+            width: 100% !important;
+            max-width: 100% !important;
+            font-size: 0.95rem !important;
+            line-height: 1.5 !important;
+            text-align: center !important;
+            margin: 0 auto !important;
+        }
+
+        /* 3. Rechte Spalte (Liste) unter dem Intro stapeln */
+        .philosophy-list {
+            display: flex !important;
+            flex-direction: column !important;
+            width: 100% !important;
+            gap: 25px !important;
+        }
+
+        .philosophy-item {
+            width: 100% !important;
+            box-sizing: border-box !important;
+            text-align: left !important;
+            /* Behält die gute Lesbarkeit für die Kernprinzipien */
+        }
+
+        .philosophy-item h3 {
+            margin-bottom: 8px !important;
+            font-size: 1.2rem !important;
+        }
+
+        .philosophy-item p {
+            font-size: 0.9rem !important;
+            line-height: 1.4 !important;
+        }
+
+        /* ==========================================
+   KONTAKT SEKTION - MOBILE (1.2x & NO NUMBER)
+   ========================================== */
+
+        /* 1. Nummer "04" auf Mobile ausblenden */
+        .contact-number {
+            display: none !important;
+        }
+
+        /* 2. Container inklusive aller Texte & Buttons proportional auf 1.2x skaliern */
+        .contact-container {
+            transform: scale(1.1) !important;
+            transform-origin: center center !important;
+            margin: 10px auto !important;
+            /* Gibt durch die Vergrößerung oben/unten etwas Platz */
+            width: 100% !important;
+            max-width: 100% !important;
+            text-align: center !important;
+            box-sizing: border-box !important;
+        }
+
+        /* Abstände innerhalb der skalierten Elemente verfeinern */
+        .contact-tag {
+            display: block !important;
+            margin-bottom: -30px !important;
+        }
+
+        .contact-title {
+            margin-bottom: -20px !important;
+        }
+
+        .contact-action {
+            margin-bottom: -10px !important;
+        }
+
+        .contact-email,
+        .contact-phone {
+            display: block !important;
+            margin-bottom: -35px !important;
+        }
+
+        /* ==========================================
+   DATENSCHUTZ / LEGAL TITLE - GRÖSSE 0.9x
+   ========================================== */
+
+        .legal-title {
+            font-size: 2.2em !important;
+            /* verringert die Größe um 10% der aktuellen Grundgröße */
+            /* Alternative, falls em zu klein ist: scale-Wert nutzen */
+            /* transform: scale(0.9); transform-origin: left center; */
+        }
+
+        @media screen and (max-width: 768px) {
+            .page-contact-wrapper {
+                padding-right: 20px !important;
+                padding-left: 20px !important;
+                box-sizing: border-box !important;
+            }
+
+            .page-contact-form input,
+            .page-contact-form select,
+            .page-contact-form textarea {
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+            }
+        }
+
+        /* Ganzer Container bekommt Innenabstand */
+        .page-contact-wrapper {
+            padding-right: 20px !important;
+            padding-left: 20px !important;
+            box-sizing: border-box !important;
+        }
+
+        /* Bricht lange Texte sauber um & hält Abstand */
+        .page-contact-info-section {
+            padding-right: 15px !important;
+            box-sizing: border-box !important;
+            word-wrap: break-word;
+        }
+
+        /* Verhindert, dass starre Überschriften über den Rand ragen */
+        .page-contact-info-section h6 {
+            font-size: 1.3rem !important;
+            /* Passt die Schriftgröße leicht an Mobil an */
+            word-break: break-word;
+        }
+
+        /* Formularelemente innerhalb der Grenzen halten */
+        .page-contact-form input,
+        .page-contact-form select,
+        .page-contact-form textarea {
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+        }
+
+        @media screen and (max-width: 768px) {
+
+            /* Deaktiviert die Umbrüche nur im unteren Rückruf-Block */
+            .info-block-2 br {
+                display: none !important;
+            }
+
+            /* Sorgt für eine saubere Silbentrennung im unteren Block */
+            .info-block-2 p,
+            .info-block-2 h6 {
+                hyphens: auto;
+                -webkit-hyphens: auto;
+            }
+        }
+
+    }
 }

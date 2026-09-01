@@ -36,7 +36,7 @@
     <!-- 2. MAIN: Der Hauptinhalt der Website -->
     <!-- 2. MAIN: Der Hauptinhalt der Website -->
     <main>
-        <section id="hero" class="hero-section">
+        <section id="ueber-mich" class="hero-section">
             <div class="hero-container">
 
                 <!-- Textbereich (Ebene 3 – liegt vor dem Bild) -->
@@ -118,13 +118,13 @@
                             Eine Auswahl meiner Arbeiten aus Design, Code und Video.
                         </p>
 
-                        <!-- Filter Navigation direkt unter der Subheadline -->
-                        <nav class="projects-filter">
-                            <button class="filter-btn active" data-filter="all">Alle</button>
-                            <button class="filter-btn" data-filter="grafik">Grafik</button>
-                            <button class="filter-btn" data-filter="uiux">UI/UX</button>
-                            <button class="filter-btn" data-filter="web">Web</button>
-                            <button class="filter-btn" data-filter="video">Video</button>
+                        <!-- Optimierter Filter-Bereich für Screenreader -->
+                        <nav class="projects-filter" aria-label="Projekte filtern">
+                            <button class="filter-btn active" data-filter="all" aria-pressed="true">Alle</button>
+                            <button class="filter-btn" data-filter="grafik" aria-pressed="false">Grafik</button>
+                            <button class="filter-btn" data-filter="uiux" aria-pressed="false">UI/UX</button>
+                            <button class="filter-btn" data-filter="web" aria-pressed="false">Web</button>
+                            <button class="filter-btn" data-filter="video" aria-pressed="false">Video</button>
                         </nav>
                     </div>
 
@@ -402,7 +402,7 @@
         <nav class="side-nav">
             <ul class="side-nav-list">
                 <li>
-                    <a href="#hero" class="side-nav-link active">
+                    <a href="#ueber-mich" class="side-nav-link active">
                         <span class="nav-label">Über mich</span>
                         <span class="nav-number">01</span>
                     </a>
@@ -440,11 +440,12 @@
             <!-- Social Media Icons -->
             <div class="footer-social">
                 <a href="https://x.com/J4111v1" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
-                    <img src="assets/social-media/X-Logo-80x80.png" alt="X" class="social-icon">
+                    <img src="assets/social-media/X-Logo-80x80.png" alt="X-Logo" class="social-icon">
                 </a>
+                <!-- Cleanere Social-Media-Links -->
                 <a href="https://www.instagram.com/j4111v1/" target="_blank" rel="noopener noreferrer"
                     aria-label="Instagram">
-                    <img src="assets/social-media/Instagram-Logo-80x80.png" alt="Instagram" class="social-icon">
+                    <img src="assets/social-media/Instagram-Logo-80x80.png" alt="Instagram-Logo" class="social-icon">
                 </a>
             </div>
 
